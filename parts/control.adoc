@@ -4,7 +4,7 @@
 |===
 | Date | Developer(s) | Change
 
-| 2025-xx-xx |  |  
+| 2025-09-27 | Mahad Ahmed | add G.4 Functionality Overview  
 | 2025-xx-xx |  |  
 |===
 
