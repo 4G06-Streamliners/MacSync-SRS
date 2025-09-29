@@ -1,13 +1,11 @@
-== Control Information
+== Revision History
 
-[cols="^1,^2,^2,^2,^2"]
+[cols="^1,^2,^2"]
 |===
-.2+| *Version* 2+| *Delivery* 2+| *Feedback*
-| _Deadline_ | _Delivered_ | _Received_ | _Integrated_ 
+| Date | Developer(s) | Change
 
-| **V1** | | | |
-| **V2** | | | |
-| **V3** | | | |
+| 2025-xx-xx |  |  
+| 2025-xx-xx |  |  
 |===
 
 ifdef::author_1[]
