@@ -13,7 +13,7 @@ The system relies on the following **software components**:
 * **Waiver & Preference Module** :: Collects required liability waivers and optional attendee information (dietary restrictions, accessibility needs).
 * **Bus/Table/RSVP Module** :: Manages sign-ups for buses, table seating, and session RSVPs, enforcing capacity limits and fairness in assignment.
 * **Check-In Module** :: Validates digital tickets via QR/Barcode scanning, including offline validation support for unreliable connectivity.
-* **Notification & Reminder Module** :: Sends push notifications, confirmations, and event reminders through integrated services (e.g., Firebase Cloud Messaging).
+* **Notification & Reminder Module** :: Sends push notifications, confirmations, and event reminders through integrated services (e.g., Calendar Integration).
 * **Admin Dashboard & Analytics Module** :: Provides organizers with an interface to monitor registrations, ticket sales, waitlists, finances, and demographic data.
 * **Role-Based / Feature-Based Access Control Module (RBAC/FBAC)** :: Ensures organizers only access features and data relevant to their role.
 * **Database Management System** :: Stores user accounts, ticketing data, waiver records, payment confirmations, and system logs.
