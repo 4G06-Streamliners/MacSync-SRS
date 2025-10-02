@@ -4,7 +4,7 @@
 |===
 | Date | Developer(s) | Change
 
-| 2025-xx-xx |  |  
+| 2025-10-02 | Abyan | Completed G.1
 | 2025-xx-xx |  |  
 |===
 
