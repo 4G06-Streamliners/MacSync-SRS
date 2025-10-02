@@ -5,6 +5,7 @@
 | Date | Developer(s) | Change
 
 | 2025-10-02 | Abyan | Completed G.1
+| 2025-10-02 | Abyan | Completed E.3
 | 2025-09-27 | Mahad | add G.4 Functionality Overview  
 | 2025-10-02 | Farhan | Completed section E.5
 | 2025-10-02 | Farhan | Completed G.3
