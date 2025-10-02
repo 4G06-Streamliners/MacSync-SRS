@@ -1,8 +1,14 @@
 [#g6,reftext=G.6]
 === (G.6) Limitations and Exclusions
 
-ifdef::env-draft[]
-TIP: _Aspects that the system need not address. It states what the system will not do. This chapter addresses a key quality attribute of good requirements: the requirements must be delimited (or “scoped”). <<g6>> is not, however, the place for an analysis of risks and obstacles, which pertain to the project rather than the goals and correspondingly appears in chapter <<p6>>._  <<BM22>>
-endif::[]
+The Large Event Management System (LEMS) is designed to address the key needs of event organization and participation, but there are aspects that the system will not attempt to cover. Clearly stating these exclusions helps define the scope and ensures expectations are realistic.
 
-{emptysec}
+* The system will not replace external communication platforms such as email or Discord for general discussion outside of event-specific notifications.
+* The system will not provide built-in social networking or messaging features beyond the delivery of event-related announcements.
+* The system will not manage non-event related finances for the McMaster Engineering Society (MES) or other student groups. Its financial functionality is limited to event-related payments and reporting.
+* The system will not include venue booking, catering, or logistics management beyond recording relevant event details entered by organizers.
+* The system will not integrate with university academic systems (e.g., course registration or student records).
+* The system will not provide offline functionality; access requires an internet connection to use web or mobile applications.
+* The system will not guarantee support for events outside the scope of MES and affiliated student groups, though it may be adaptable by others in the future.
+
+By identifying these exclusions, the scope of LEMS remains focused on providing a streamlined event management experience without overextending into unrelated domains.
