@@ -5,4 +5,8 @@ ifdef::env-draft[]
 TIP: _Properties of the environment that the system's operation must preserve, i.e., properties of the environment that operations of the system may assume to hold when they start, and must maintain._  <<BM22>>
 endif::[]
 
-{emptysec}
+Properties of the environment that the system's operation must preserve will be assumed as follows: 
+
+- MacSync will assume that all events listed on the MacSync platform has an MES exectutive owner of record that is either (a) hosting the event or (b) the supervising/approving authority of the event. This ensures that all events listed on MacSync are MES sanctioned events. 
+- MacSync will assume that all students registering for events will have a valid and unique MacID. This means that all registered MacSync users will be associated with their unique MacID to ensure identity verification and prevent duplicate accounts.
+- MacSync will assume that the `event-capacity` entered upon creating events is the single source of truth for event capacity. At all times: `registered-students ≤ event-capacity` must hold. This ensures that tickets are not oversold for events with limited capacity.
