@@ -5,4 +5,32 @@ ifdef::env-draft[]
 TIP: _List of elements of the environment that may affect or be affected by the system and project. It includes other systems to which the system must be interfaced. These components may include existing systems, particularly software systems, with which the system will interact — by using their APIs (program interfaces), or by providing APIs to them, or both. These are interfaces provided to the system from the outside world. They are distinct from both: interfaces provided by the system to the outside world (<<s3>>); and technology elements that the system's development will require (<<p5>>)._  <<BM22>>
 endif::[]
 
+
+The following external components represent the environment in which the Large Event Management System (LEMS) operates. These are systems and services with which LEMS must interface, or which constrain its operation:
+
+* **University Authentication (McMaster SSO / MacID)** :: 
+  Provides secure authentication for both attendees and organizers. 
+  Ensures only valid students and authorized staff/volunteers can access the system.
+
+* **Third-Party Payment Gateway Integration (Stripe, Square, PayPal)** :: 
+  Handle all financial transactions for ticket purchases and refunds. 
+  LEMS relies on their APIs for secure payment processing and confirmation.
+
+* **Notification Services (e.g., Apple Push Notification Service, Google FCM for Android)** :: 
+  Used to deliver event reminders, confirmations, and updates to attendees’ mobile devices.
+
+* **Email Service Integration (SMTP provider or university-managed email infrastructure)** :: 
+  Provide a fallback for important notifications (e.g., payment confirmations, waiver receipts) if push notifications fail.
+
+* **QR Code Libraries and Mobile Camera APIs** :: 
+  Provide functionality for generating, displaying, and scanning QR codes for event check-in.
+
+* **Calendar Integration (Google Calendar, Apple Calendar, Microsoft Outlook)** :: 
+  Allows attendees to add event dates, reminders, and details directly into their personal calendars. 
+  LEMS must export event information in standard calendar formats (iCal/ICS) and synchronize updates where supported.
+
+* **Device Ecosystem (iOS, Android, modern web browsers)** :: 
+  Represents the hardware/software environments in which the system must run reliably. 
+  Includes smartphones for attendees and laptops/desktops for organizers.
+
 {emptysec}
