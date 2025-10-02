@@ -24,7 +24,6 @@ The system relies on the following **hardware components**:
 * **Mobile Devices (iOS/Android smartphones)** :: Used by attendees to register, purchase tickets, receive notifications, and check in to events.
 * **Laptops/Desktops (Organizers)** :: Used by MES volunteers and executives to access the admin dashboard, manage events, and perform analytics.
 * **QR Code Scanners (Smartphone Cameras or Organizer Devices)** :: Used at event entrances to validate attendee tickets efficiently.
-* **Cloud Hosting Infrastructure** :: Provides servers for backend processing, database management, and load balancing during peak demand.
 
 Together, these components define the operational structure of the system and highlight the dependencies critical for secure and reliable operation.
 
