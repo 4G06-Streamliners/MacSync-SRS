@@ -11,7 +11,7 @@ The MacSync Application provides a centralized platform for McMaster Engineering
 
 - *Payments / Ticketing:* The application must integrate a payment gateway to create charges for event tickets. Each transaction should generate an invoice for the attendee and a sales report for system admin. Furthermore,  The gateway should be able to handle real-time availability checks to prevent overselling tickets.
 - *Role / Feature Based Access Control (RBAC/FBAC):* The system must provide access to various features depending on users privelege level. This will also include an admin UI to assign/revoke roles. This will ensure a clear seperation of use-cases for end users.
-- *Bus / RSVP / Table Signups:* The system must provide an RSVP feature for students to automatically sign-up, the system will show live capacity information. The system should also be able to handle race conditions in the event multiple users attempt to sign up at the same time. This will adapt a first-come first-serve system to ensure fairness for users to sign up.
+- *Bus / RSVP / Table Signups:* The system must provide an RSVP feature for students to automatically sign-up, the system will show live capacity information (i.e. the number of spots left). In the event that many users try to sign up at the same time, the system will ensure tickets are given out on a first-come first-serve basis to ensure fairness for users to register and prevent over selling tickets.
 
 ==== Key Functional Requirements
 
