@@ -5,4 +5,20 @@ ifdef::env-draft[]
 TIP: _Initially, description of what the requirements process will be; later, report on its steps. It starts out as a plan for conducting the requirements elicitation process, but is meant to be updated as part of that process so that it includes the key lessons of elicitation._  <<BM22>>
 endif::[]
 
-{emptysec}
+==== (P.7.1) Interviews with Direct Stakeholders
+
+* *McMaster Engineering Society Executive (MES)*
+** *Type of Interview:* *Open*. This format allows us to explore the key challenges the MES executives are facing with hosting events. It allows us to ask questions in a back and forth manner to clarify their long term goals. 
+** *Most Important Question:* What outcomes define success that we should be aiming for to align with your vision for the MacSync platform?
+
+* *MES Event Organizers*
+** *Type of Interview:* *Closed*. The purpose of this interview is to gather the current state of how events are currently hosted. What works, what doesn't work? It will allow us to gather the clear pain points from the stakeholders that host these events.
+** *Most Important Question:* From the initial announcement of the event, to the start time, where do we lose the most amount of time? What platforms don't gain alot of attraction and why are your users not aware of these events?
+
+* *Students/Attendees*
+** *Type of Interview:* *Closed*. The purpose of this interview is to gather information on why students aren't showing up to events. This interview will be very similar to a survey.
+** *Most Important Question:* Are you aware of MES events? What platforms do you view the announcements of events? What step of the registration process do you feel hesitant to continue?
+
+==== (P.7.2) Justification for Interviews
+
+The interview types and questions listed above are tailored to each persona to gather the relevant facts of the short comings of the current MES event hosting eco system. The information gathered will help in translating these pain points into functional and non-functional requirements.
