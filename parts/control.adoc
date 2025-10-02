@@ -5,6 +5,8 @@
 | Date | Developer(s) | Change
 
 | 2025-10-02 | Farhan | Completed section E.5
+| 2025-10-02 | Farhan | Completed G.3
+| 2025-09-28 | Mahad | E.6 Invariants 
 | 2025-xx-xx |  |  
 |===
 
