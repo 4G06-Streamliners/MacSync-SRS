@@ -5,5 +5,22 @@ ifdef::env-draft[]
 TIP: _Elements and properties of the environment that the system will affect. It defines effects of the system's operations on properties of the environment. Where the previous two categories (<<e3>>, <<e4>>) defined influences of the environment on the system, effects are influences in the reverse direction._  <<BM22>>
 endif::[]
 
+The introduction of the MacSync platform will have several direct effects on the environment in which it operates:
 
-{emptysec}
+*Improved Student Experience*::  
+Attendees gain a single, consistent interface for event discovery, registration, ticketing, and updates. This effect reduces confusion caused by separated tools and increases overall event participation.
+
+*Reduced Administrative Burden*::  
+Organizers will spend less time on manual tasks such as consolidating spreadsheets, managing waivers, or checking attendees in by hand. The platform streamlines these workflows, freeing volunteer time for event planning and quality improvements.
+
+*Financial Clarity*::  
+By integrating payment systems and providing dashboards, the platform enables real-time tracking of revenue and ticket sales. This enhances MES executives’ ability to monitor finances and reduces risks tied to cash handling.
+
+*Inclusivity and Accessibility*::  
+Centralized collection of dietary and accessibility requirements ensures that attendees’ needs are acknowledged and acted upon, improving inclusivity at MES events.
+
+*Community Engagement*::  
+Timely reminders, waitlist handling, and centralized communication increase the likelihood of students attending and staying connected with MES activities, strengthening the sense of community.
+
+*Volunteer Experience*::  
+The platform reduces stress during event execution (e.g., check-ins, capacity management) and creates a more positive environment for student organizers and volunteers, encouraging continued involvement in future years.
