@@ -11,7 +11,7 @@
 | 2025-10-02 | Farhan | Completed section E.5
 | 2025-10-02 | Farhan | Completed G.3
 | 2025-09-28 | Mahad | E.6 Invariants 
-| 2025-xx-xx |  |  
+| 2025-10-02 | Prerna |  Draft G.5 High Level Usage Scenarios
 |===
 
 ifdef::author_1[]
