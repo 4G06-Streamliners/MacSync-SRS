@@ -5,7 +5,11 @@ ifdef::env-draft[]
 TIP: _Clear and precise definitions of all the vocabulary specific to the application domain, including technical terms, words from ordinary language used in a special meaning, and acronyms. It introduces the terminology of the project; not just of the environment in the strict sense, but of all its parts._  <<BM22>>
 endif::[]
 
-*User*:: Represents any person interacting with the system, either as an attendee or organizer.
+*MacSync*::  
+The name of the software application being developed. MacSync is a centralized event management platform designed for the McMaster Engineering Society (MES) to handle registrations, ticketing, payments, notifications, and event logistics.
+
+*User*::  
+Represents any person interacting with the system, either as an attendee or organizer.
 
 *Attendee*::  
 A student or guest who registers for and participates in an event. Attendees interact primarily with the mobile application to purchase tickets, complete registrations, and check in on event day.
@@ -41,18 +45,4 @@ A feature allowing attendees to reserve tables for formals or similar events, en
 A permissions model that restricts what each user (e.g., attendee, organizer, executive) can access or modify within the system. This prevents errors and improves security by limiting privileges to the user’s role.
 
 *Payment Integration*::  
-The system’s connection to secure third-party services such as Stripe, Square, or PayPal, enabling attendees to purchase tickets online.
-
-*Waitlist*::  
-A dynamic list of students who request tickets after an event has sold out. As seats open, the system automatically allocates them in order.
-
-*Notification*::  
-System-generated reminders or updates sent to attendees (e.g., registration confirmations, event changes, or bus departure times). Notifications may be delivered via push notifications, email, or SMS.
-
-*Analytics*::  
-Reports available to organizers showing ticket sales, attendee demographics, dietary/accessibility data, and other event statistics to guide decision-making.
-
-*Sponsor*::  
-An external partner supporting MES events in exchange for visibility or engagement. Sponsors benefit indirectly from the platform through branding opportunities.
-
-This glossary establishes consistent terminology for all stakeholders, ensuring clarity when discussing system features, roles, and responsibilities.
+The system’s connection to secure third-party services s
