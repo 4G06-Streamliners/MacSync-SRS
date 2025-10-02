@@ -1,8 +1,28 @@
 [#e3,reftext=E.3]
 === (E.3) Constraints
 
-ifdef::env-draft[]
-TIP: _Obligations and limits imposed on the project and system by the environment. This chapter defines non-negotiable restrictions coming from the environment (business rules, physical laws, engineering decisions), which the development will have to take into account._  <<BM22>>
-endif::[]
+The development of the Large Event Management System (LEMS) is subject to a number of
+environmental and organizational constraints that must be observed throughout the project.
+These constraints are considered non-negotiable and define the limits within which the system must operate.
 
-{emptysec}
+Business and Organizational Constraints:
+
+* The system must comply with McMaster University policies for student organizations, including financial tracking and data management expectations.
+* Payment processing must be handled through approved providers (Stripe) to ensure compliance with institutional and financial regulations.
+* Data collected from participants must follow privacy and confidentiality rules, with secure handling of personal information and waivers.
+* The system must remain maintainable beyond the current project team, supporting future MES groups with minimal retraining.
+
+Technical and Infrastructure Constraints:
+
+* The backend must use PostgreSQL as the database technology, as specified by project leadership.
+* Hosting will be provided through DigitalOcean, managed by the MES, which limits available deployment platforms.
+* Containerization with Docker will be used for database instances, and this approach must be maintained to simplify deployment and consistency across groups.
+* The chosen technology stack (JavaScript, Next.js, React Native, NestJS, Drizzle ORM) must be consistently applied across groups to avoid integration issues.
+
+Operational Constraints:
+
+* The system must be able to support peak usage during major events such as the Fireball Formal or Graffiti Pub, where hundreds of concurrent sign-ups and check-ins may occur.
+* Interfaces must be usable on both web and mobile platforms, as attendees will expect access from their own devices.
+* The project must be completed within the academic term schedule, which limits available time for development, testing, and deployment.
+
+These constraints ensure that the system respects institutional rules, technical choices, and practical limits of the development environment. They set the boundaries within which design decisions can be made.
