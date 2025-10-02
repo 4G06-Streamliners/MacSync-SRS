@@ -5,4 +5,27 @@ ifdef::env-draft[]
 TIP: _Overall structure expressed by the list of major software and, if applicable, hardware parts._  <<BM22>>
 endif::[]
 
+
+The system relies on the following **software components**:
+
+* **Registration & Ticketing Module** :: Provides functionality for attendees to view upcoming events, purchase tickets, join waitlists, and confirm registration.
+* **Payment Processing Module** :: Interfaces with third-party gateways (Stripe, Square, PayPal) to process transactions securely and issue confirmations.
+* **Waiver & Preference Module** :: Collects required liability waivers and optional attendee information (dietary restrictions, accessibility needs).
+* **Bus/Table/RSVP Module** :: Manages sign-ups for buses, table seating, and session RSVPs, enforcing capacity limits and fairness in assignment.
+* **Check-In Module** :: Validates digital tickets via QR/Barcode scanning, including offline validation support for unreliable connectivity.
+* **Notification & Reminder Module** :: Sends push notifications, confirmations, and event reminders through integrated services (e.g., Firebase Cloud Messaging).
+* **Admin Dashboard & Analytics Module** :: Provides organizers with an interface to monitor registrations, ticket sales, waitlists, finances, and demographic data.
+* **Role-Based / Feature-Based Access Control Module (RBAC/FBAC)** :: Ensures organizers only access features and data relevant to their role.
+* **Database Management System** :: Stores user accounts, ticketing data, waiver records, payment confirmations, and system logs.
+* **Audit Logging Subsystem** :: Records all administrative actions (refunds, seat assignments, event edits) for accountability and traceability.
+
+The system relies on the following **hardware components**:
+
+* **Mobile Devices (iOS/Android smartphones)** :: Used by attendees to register, purchase tickets, receive notifications, and check in to events.
+* **Laptops/Desktops (Organizers)** :: Used by MES volunteers and executives to access the admin dashboard, manage events, and perform analytics.
+* **QR Code Scanners (Smartphone Cameras or Organizer Devices)** :: Used at event entrances to validate attendee tickets efficiently.
+* **Cloud Hosting Infrastructure** :: Provides servers for backend processing, database management, and load balancing during peak demand.
+
+Together, these components define the operational structure of the system and highlight the dependencies critical for secure and reliable operation.
+
 {emptysec}
