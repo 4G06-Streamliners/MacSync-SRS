@@ -45,4 +45,4 @@ A feature allowing attendees to reserve tables for formals or similar events, en
 A permissions model that restricts what each user (e.g., attendee, organizer, executive) can access or modify within the system. This prevents errors and improves security by limiting privileges to the user’s role.
 
 *Payment Integration*::  
-The system’s connection to secure third-party services s
+The system’s connection to secure third-party services
