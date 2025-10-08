@@ -5,4 +5,57 @@ ifdef::env-draft[]
 TIP: _**This is the core of the Project book**. It details the individual tasks listed under <<p3>> and their expected outcomes. It define the project's main activities and the results they must produce, associated with the milestone dates defined in <<p3>>._  <<BM22>>
 endif::[]
 
+The following table outlines the detailed tasks and deliverables for the Large Event Management System (LEMS) – Project B.  
+Each task corresponds to a major system feature, deliverable, or refinement cycle defined in the MES Project Scope and Capstone Calendar.  
+Feature development will occur progressively between October and December 2025, with all core modules integrated and operational by January 2026 (Winter Term, Week 1) for MES internal testing.  
+Final reports, presentations, and documentation will continue through April 2026.
+
+[cols="1,3,3,2", options="header,autowidth"]
+|===
+| **Task ID** | **Description** | **Deliverable / Expected Outcome** | **Milestone / Due Date**
+
+| **T1** | Problem Statement and Project Scoping | Initial Problem Statement and Scoping Document outlining project goals, stakeholders, and initial requirements for Payment, RBAC/FBAC, and Sign-Up modules. | *Week 4 – Sep 2025*
+
+| **T2** | Hazard Analysis and SRS | Completed Hazard Analysis and Software Requirements Specification (SRS) defining functional, safety, and security requirements for all system components. | *Week 6 – Oct 2025*
+
+| **T3** | Verification & Validation (V&V) Plan and Proof of Concept Setup | V&V Plan and preliminary Proof of Concept environment showing early registration and UI flow integration. | *Week 8 – Oct 2025*
+
+| **T4** | System Architecture and Design | Design Document Rev 1 with finalized data models, interface diagrams, and module-level designs for Payments, RBAC/FBAC, and Sign-Up systems. | *Week 10 – Nov 2025*
+
+| **T5** | Payment System Implementation | Development of secure Payment Processing using Stripe, Square, and PayPal APIs. Includes transaction confirmation, duplicate protection, and error-handling features. | *End of Oct 2025*
+
+| **T6** | Role-Based and Feature-Based Access Control (RBAC/FBAC) | Implementation of user authentication (via McMaster SSO) and access control to restrict organizer/admin privileges by role and function. | *Mid-Nov 2025*
+
+| **T7** | Registration, Waiver, and Preference Module | Completion of user registration workflow, waiver submission, and attendee preference collection (dietary, accessibility). | *Late Nov 2025*
+
+| **T8** | Bus/Table/RSVP Sign-Up Module | Implementation of dynamic seat/bus/table selection system with real-time capacity validation and confirmation notifications. | *Early Dec 2025*
+
+| **T9** | Notification and Reminder System | Integration of push/email notifications via Firebase Cloud Messaging (FCM) and fallback email system. Includes automated event reminders and updates. | *Mid-Dec 2025*
+
+| **T10** | Calendar Integration | Implementation of calendar export and synchronization (Google, Apple, Outlook) allowing attendees to add event dates directly to personal calendars. | *Late Dec 2025*
+
+| **T11** | Core System Integration (MVP Release) | Integration of all modules (Payments, RBAC, Registration, Sign-Ups, Notifications) into a unified platform for MES testing. | *Week 16 – Jan 2026 (Winter Term, Week 1)*
+
+| **T12** | User Testing and Feedback Collection | Internal MES pilot testing using live event data. Collect and log user feedback for iterative refinement. | *Weeks 17–18 – Feb 2026*
+
+| **T13** | Refinement Cycle 1 | Refinements based on feedback, including UI/UX adjustments, bug fixes, and performance optimization. | *Week 20 – Feb 2026*
+
+| **T14** | Verification & Validation Testing | V&V Report confirming compliance with functional, safety, and security requirements defined in the SRS. | *Week 22 – Mar 2026*
+
+| **T15** | Refinement Cycle 2 and Final Optimization | Second round of refinements based on testing results and organizer feedback. Enhancements to notification reliability, analytics, and accessibility. | *Week 23 – Mar 2026*
+
+| **T16** | Final Demonstration and Handover | Final Capstone Demo and Handover Package, including full documentation, deployment guide, and repository for future MES development. | *Week 24 – Mar 2026*
+
+| **T17** | Poster and Final Deliverables Submission | Poster PDF, Final Documentation Package, and Demo Video prepared and submitted as part of Capstone final evaluation. | *Week 25 – Apr 2026*
+
+| **T18** | Capstone Expo and Final Presentation | Capstone Expo Presentation and project showcase. Completion of course evaluation and public demonstration of final system. | *Week 26 – Apr 2026*
+|===
+
+---
+
+**Summary:**  
+This schedule ensures that all core Project B deliverables — Payment Integration, RBAC/FBAC, and Bus/Table/RSVP Systems are completed by the end of the Fall 2025 term for functional validation, with
+ enhancements and integration tasks completed in Winter 2026 prior to production testing at major MES events.  
+
+
 {emptysec}
