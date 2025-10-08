@@ -16,6 +16,7 @@
 | 2025-09-28 | Mahad | E.6 Invariants 
 | 2025-10-01 | Prerna | Completed S.1 Components
 | 2025-10-02 | Prerna | Completed E.2 Components
+| 2025-10-08 | Prerna | Initial version of S.6 Verification and Acceptance Criteria
 |===
 
 ifdef::author_1[]
