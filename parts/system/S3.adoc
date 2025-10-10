@@ -5,4 +5,79 @@ ifdef::env-draft[]
 TIP: _How the system makes the functionality of <<s2>> available to the rest of the world, particularly user interfaces and program interfaces (APIs). It specifies how that functionality will be made available to the rest of the world, including people (users) and other systems. These are interfaces provided by the system to the outside; the other way around, interfaces from other systems, which the system may use, are specified in <<e2>>._  <<BM22>>
 endif::[]
 
-{emptysec}
+The MES system offers several external interfaces, which facilitate interaction with both users and external systems. This section details the external APIs provided by each core component of the system. These APIs enable key functionalities for the platform such as user navigation, payment system interaction, access control, event management and sign-ups.
+
+==== (S.3.1) User Interface API
+
+[float]
+.API Endpoints for User Interaction
+[cols="1,1,2", options="header"]
+| ================ | ====== | ================================================================================================================================================================ |
+| Endpoint         | Method | Description                                                                                                                                                      |
+| /dashboard/user  | GET    | Retrieves information related to upcoming events, the events a user signed up to and current sign-up status on those events.                                     |
+| /dashboard/admin | GET    | Retrieves admin information related to event metrics, role details, and consolidates information on events they have set up from signups to payment information. |
+| ================ | ====== | ================================================================================================================================================================ |
+
+The User Interface API enables engagement through core functions such as giving admins a dashboard to view their event details and also giving users a dashboard to keep track of events going on, signed up events, and user profile details.
+
+==== (S.3.2) Payment System API
+
+[float]
+.API Endpoints for Payment System Services
+[cols="1,1,2", options="header"]
+| =============================== | ====== | ====================================================================================================================== |
+| Endpoint                        | Method | Description                                                                                                            |
+| /payment/initiate               | POST   | Initiates a new payment transaction for ticket purchases, providing users the ability to put in their payment details. |
+| /payment/confirm                | POST   | Allows users to confirm their payment transaction.                                                                     |
+| /payment/refund                 | POST   | Allows users to submit a refund request and process them.                                                              |
+| /payment/status/{transactionID} | GET    | Retrieves current status of the payment transaction made by the user (pending, complete or failed).                    |
+| =============================== | ====== | ====================================================================================================================== |
+
+The Payment System API leverages external payment gateways to manage all financial interactions within the platform related to tickets, transactions and payment status. The endpoints allow smooth and secure handling of data to ensure a transparent user experience.
+
+==== (S.3.3) Role Based Access Control / Feature Based Access Control API
+
+[float]
+.API Endpoints for Access Controls
+[cols="1,1,2", options="header"]
+| =========================== | ====== | ================================================================================================= |
+| Endpoint                    | Method | Description                                                                                       |
+| /auth/login                 | POST   | Authenticates user credentials, managing user authentication to ensure secure access to accounts. |
+| /auth/logout                | POST   | Ends user session and clears sensitive session data.                                              |
+| /roles/permissions/{userId} | GET    | Retrieves access rights granted to a specific user.                                               |
+| /roles/permissions/update   | PUT    | Updates a user's role and feature based access.                                                   |
+| =========================== | ====== | ================================================================================================= |
+
+The Role Based Access Control / Feature Based Access Control API is critical for determining the type of access rights for each user type, governing authorization across the platform so that users can only access features they are permitted to as well as allowing admins to assign access.
+
+==== (S.3.4) Event Management System API
+
+[float]
+.API Endpoints for Event Management System
+[cols="1,1,2", options="header"]
+| ====================== | ====== | ========================================================== |
+| Endpoint               | Method | Description                                                |
+| /events/list           | GET    | Retrieves a list of all events created by an admin.        |
+| /events/create-event   | POST   | Allows admins to create an event with details and content. |
+| /events/update-content | PUT    | Allows admin to update existing event details and content. |
+| ====================== | ====== | ========================================================== |
+
+The Event Management System API gives administrators the ability to manage, create and update events so that they are able to have their events available for users to see and also ensure content remains relevant and up to date.
+
+==== (S.3.5) Sign-Ups API
+
+[float]
+.API Endpoints for Sign-Ups System
+[cols="1,1,2", options="header"]
+| ========================== | ====== | ================================================================================= |
+| Endpoint                   | Method | Description                                                                       |
+| /signups/list              | GET    | Allows users to see a list of all signups available on events.                    |
+| /signups/{signupId}/rsvp   | POST   | Allows users to rsvp for a specific event.                                        |
+| /signups/{signupId}/bus    | POST   | Allows users to reserve seats on a bus for a specific event.                      |
+| /signups/{signupId}/table  | POST   | Allows users to reserve seats on a table for a specific event.                    |
+| /signups/{signupId}/cancel | DELETE | Cancels users signup to a specific event.                                         |
+| /signups/{signupId}/status | GET    | Retrieves status of a specific event a user signed up to (waitlist or confirmed). |
+| ========================== | ====== | ================================================================================= |
+
+The Sign-Ups API allows event attendees to see all event signups, sign up for specific events by confirming details about rsvp, buses or tables, see their status on a specific event and also cancel their signup. The API manages capacity limits, waitlists and provides real-time information helpful to both users and admins.
+
