@@ -7,7 +7,7 @@
 |Section | Version | Lead | Delivered on| Reviewer | Approved on
 
 | **<<g1>>** |  |  |  |  |
-| **<<g2>>** |  |  |  |  |
+| **<<g2>>** | V1 | Ali | 2025-10-09 |  |
 | **<<g3>>** | V1 | Farhan | 2025-10-02 |  |
 | **<<g4>>** |  |  |  |  |
 | **<<g5>>** |  |  |  |  |
