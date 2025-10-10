@@ -1,8 +1,73 @@
 [#s2,reftext=S.2]
 === (S.2) Functionality
 
-ifdef::env-draft[]
-TIP: _**This is the bulk of the System book, describing elements of functionality (behaviors)**. This chapter corresponds to the traditional view of requirements as defining "**what the system does**”. It is organized as one section, S.2.n, for each of the components identified in <<s1>>, describing the corresponding behaviors (functional and non-functional properties)._  <<BM22>>
-endif::[]
+==== (S.2.1) Registration & Ticketing Module
 
-{emptysec}
+===== Functional Requirements
+
+. [[F101]] **Event browsing and registration:** The system shall allow users to view upcoming MES events and register by purchasing tickets. (F101)
+. [[F102]] **Ticket purchasing and invoicing:** Each transaction shall generate a digital ticket and invoice for the attendee, recorded in the system database. (F102)
+. [[F103]] **Waitlist management:** When an event reaches capacity, the system shall automatically queue users on a waitlist and notify them when a slot becomes available. (F103)
+. [[F104]] **Cancellation and refunds:** Users shall be able to cancel registrations within the organizer-defined window, and the system shall trigger refunds when applicable. (F104)
+
+===== Non-Functional Requirements
+
+. [[NF101]] **Performance:** The registration and ticketing operations shall complete within 2 seconds under normal load. (NF101)
+. [[NF102]] **Data integrity:** The system shall prevent overselling tickets by using atomic database transactions. (NF102)
+. [[NF103]] **Usability:** The registration interface shall provide clear feedback messages for successful and failed transactions. (NF103)
+
+==== (S.2.2) Payment Processing Module
+
+===== Functional Requirements
+
+. [[F105]] **Stripe integration:** The backend shall connect to Stripe’s API for all credit/debit card transactions. (F105)
+. [[F106]] **Transaction verification:** The system shall confirm successful payment and record transaction details in PostgreSQL. (F106)
+. [[F107]] **Refund processing:** The system shall synchronize refund actions initiated through the admin dashboard or Stripe interface. (F107)
+
+===== Non-Functional Requirements
+
+. [[NF104]] **Security compliance:** All payment data shall comply with PCI-DSS and be encrypted with TLS 1.3 during transmission. (NF104)
+. [[NF105]] **Reliability:** Payment services shall maintain 99 percent uptime during registration periods. (NF105)
+. [[NF106]] **Auditability:** All payment events shall be logged with timestamps and user identifiers for reconciliation. (NF106)
+
+==== (S.2.3) Bus / RSVP / Table Sign-ups Module
+
+===== Functional Requirements
+
+. [[F108]] **Capacity management:** The system shall display real-time seat availability and enforce maximum capacity limits. (F108)
+. [[F109]] **First-come-first-serve allocation:** When multiple users attempt to sign up simultaneously, the system shall assign spots based on request order. (F109)
+. [[F110]] **Reservation editing:** Users shall be able to modify or cancel sign-ups prior to organizer-defined deadlines. (F110)
+
+===== Non-Functional Requirements
+
+. [[NF107]] **Fairness:** The system shall guarantee equitable allocation by locking contested seats during concurrent requests. (NF107)
+. [[NF108]] **Performance:** Reservation confirmations shall occur within 1 second of submission. (NF108)
+. [[NF109]] **Consistency:** All updates shall propagate across related tables in under 3 seconds. (NF109)
+
+==== (S.2.4) Role / Feature-Based Access Control (RBAC/FBAC)
+
+===== Functional Requirements
+
+. [[F111]] **Role definition:** Administrators shall create and assign predefined roles such as student, organizer, and executive. (F111)
+. [[F112]] **Feature access restriction:** The system shall expose or hide functions according to each role’s privileges. (F112)
+. [[F113]] **Privilege modification:** Admin users shall update role permissions through a secure dashboard interface. (F113)
+
+===== Non-Functional Requirements
+
+. [[NF110]] **Security:** Access control logic shall follow the principle of least privilege. (NF110)
+. [[NF111]] **Maintainability:** Role definitions shall be stored in configuration files editable without code changes. (NF111)
+. [[NF112]] **Traceability:** All privilege changes shall be logged for audit review. (NF112)
+
+==== (S.2.5) Privacy, Data Integrity, and Security Controls
+
+===== Functional Requirements
+
+. [[F114]] **Data encryption:** The system shall encrypt personal and financial information both in transit and at rest. (F114)
+. [[F115]] **Authentication and authorization:** Users shall authenticate with institutional credentials, and sessions shall expire after inactivity. (F115)
+. [[F116]] **Regulatory compliance:** The system shall comply with PIPEDA and institutional data protection policies. (F116)
+
+===== Non-Functional Requirements
+
+. [[NF113]] **Confidentiality:** Only authorized services shall access sensitive data fields. (NF113)
+. [[NF114]] **Integrity:** Data modification operations shall use hashing or checksums to detect tampering. (NF114)
+. [[NF115]] **Availability:** Security and privacy services shall maintain 99 percent uptime and recover automatically after failure. (NF115)
