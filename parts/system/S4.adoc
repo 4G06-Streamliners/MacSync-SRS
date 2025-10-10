@@ -29,27 +29,28 @@ endif::[]
 
 • **Success Postcondition**: User is successfully registered, payment recorded, ticket issued, and capacity updated.
 
-==== (S.4.2) Join Bus or Table Sign-Up
+==== (S.4.2) Join Bus, Table, or RSVP Sign-Up
 
 • **Primary Actor**: Student User  
 • **Supporting Actors**: Event Organizers, System (Seat Allocator)  
 • **Precondition**:  
   - User is registered for the event.  
-  - Bus/table sign-up is enabled for that event.  
-• **Trigger**: User navigates to the “Logistics” tab and selects a bus or table slot.  
+  - Bus/table or RSVP sign-up is enabled for that event.  
+• **Trigger**: User navigates to the “Logistics” tab and selects an available option.  
 
 • **Main Success Scenario**:  
-  1. System displays available buses/tables and remaining capacity.  
-  2. User selects preferred option.  
+  1. System displays available buses, tables, or RSVP options along with remaining capacity.  
+  2. User selects their preferred option.  
   3. System locks the slot and verifies availability atomically to prevent overbooking.  
-  4. System records assignment and updates capacity in real time.  
-  5. User receives confirmation and can view group members.  
+  4. System records the assignment or RSVP selection and updates capacity in real time.  
+  5. User receives confirmation and can view their assigned group, table, or RSVP status.  
 
 • **Secondary Scenarios**:  
-  - If slot is taken during selection, system notifies user and shows remaining options.  
-  - If user changes their selection, system allows switching until cutoff time.  
+  - If a slot or RSVP limit is reached during selection, the system notifies the user and displays remaining options.  
+  - If the user changes their selection, the system allows switching until the event’s cutoff time.  
+  - If RSVP confirmation is required, the system sends a reminder notification before the confirmation deadline.  
 
-• **Success Postcondition**: User’s bus/table reservation is stored and visible to organizers for logistics planning.
+• **Success Postcondition**: User’s bus, table, or RSVP selection is stored and visible to organizers for event logistics and attendance planning.
 
 ==== (S.4.3) Check-In at Event
 
