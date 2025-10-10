@@ -5,4 +5,108 @@ ifdef::env-draft[]
 TIP: _Specification of the conditions under which an implementation will be deemed satisfactory. Here, "verification" as shorthand for what is more explicitly called "Verification & Validation" (V&V), covering several levels of testing — module testing, integration testing, system testing, user acceptance testing — as well as other techniques such as static analysis and, when applicable, program proving._  <<BM22>>
 endif::[]
 
+The verification and acceptance process for the Large Event Management System (LEMS) defines how both functional and non-functional requirements will be validated and accepted.  
+Verification confirms that the system has been built correctly according to specifications, while validation confirms that the right system has been built to meet MES organizers’ and attendees’ needs.
+
+---
+
+==== Functional Requirements
+
+**1. Validation Approach**  
+Functional requirements will be verified through **acceptance testing**, automated test frameworks, and **user validation sessions** with MES organizers.  
+Prototypes of each core feature (Payment, RBAC/FBAC, Registration, Sign-Ups, Notifications) will be delivered to stakeholders during iterative sprints.  
+Each feature will be validated against acceptance criteria defined in the SRS and approved by both MES and the course supervisor.
+
+Verification will include the following methods:  
+* **Module (Unit) Testing:** Each functional module is tested independently (e.g., payment API, seat assignment logic).  
+* **Integration Testing:** Ensures interactions between modules (e.g., successful payment triggers ticket confirmation).  
+* **System Testing:** Full workflow validation — from registration to check-in — simulating real MES event scenarios.  
+* **User Acceptance Testing (UAT):** MES organizers and selected student users perform hands-on validation of workflows.
+
+**Acceptance Criteria for Functional Requirements:**
+[cols="1,4", options="header,autowidth"]
+|===
+| **Functional Area** | **Verification and Acceptance Criteria**
+
+| **F1 – Payment System** | 
+All transactions are processed securely via Stripe, Square, or PayPal APIs.  
+System confirms payment completion, issues confirmation email/QR ticket, and prevents duplicate transactions.  
+Passes integration test and UAT with 100% successful payment-to-ticket generation.  
+
+| **F2 – Role-Based / Feature-Based Access Control (RBAC/FBAC)** |
+Users can log in with McMaster SSO credentials.  
+Organizers have access only to event management functions, while attendees have restricted access.  
+All unauthorized attempts are logged and rejected during testing.  
+
+| **F3 – Registration, Waivers, and Preferences** |
+Users can register for events, complete digital waivers, and enter dietary/accessibility preferences.  
+All required forms validate correctly and are stored in the database.  
+Acceptance confirmed by organizers through UAT checklist.  
+
+| **F4 – Bus/Table/RSVP Sign-Ups** |
+System enforces real-time capacity limits.  
+Users receive confirmation of seat/bus/table assignment.  
+Test passes when 100% of sign-ups remain within defined capacity thresholds.  
+
+| **F5 – Notifications and Reminders** |
+Push notifications and confirmation emails are sent successfully upon registration and prior to events.  
+Testing confirms that 95% of notifications are delivered within 5 minutes of event trigger.  
+
+| **F6 – Calendar Integration** |
+Events can be added directly to Google, Apple, or Outlook calendars via ICS export.  
+Calendar entries include correct event name, time, and location.  
+Acceptance confirmed via UAT on multiple calendar platforms.  
+|===
+
+---
+
+==== Non-Functional Requirements
+
+Verification and validation of non-functional requirements will ensure that the system’s **security, performance, accessibility, reliability, and usability** meet the defined standards and user expectations.  
+Testing will be performed through automated performance tests, accessibility audits, and manual review sessions.
+
+**Acceptance Criteria for Non-Functional Requirements:**
+[cols="1,4", options="header,autowidth"]
+|===
+| **Non-Functional Category** | **Verification and Acceptance Criteria**
+
+| **NF1 – Accessibility** | 
+Interface verified for compliance with **AODA and WCAG 2.1 AA** standards using accessibility testing tools.  
+Usability sessions with students of varied needs confirm all functions are operable without barriers.  
+
+| **NF2 – Security and Privacy** | 
+Data encryption verified via static analysis and penetration testing.  
+All sensitive information encrypted in transit (TLS 1.2+) and at rest (AES-256).  
+Access control verified to prevent privilege escalation.  
+No unencrypted personal or payment data detected in code review or runtime logs.  
+
+| **NF3 – Performance and Reliability** | 
+Load testing confirms that 1,000 concurrent users can register or pay without failures.  
+Average response time ≤ 2 seconds, uptime ≥ 98% during simulated registration peaks.  
+Offline QR check-in functions successfully for at least 60 minutes without connectivity.  
+
+| **NF4 – Backup and Recovery** | 
+Automated daily backups verified and test restoration completed within 24 hours.  
+Recovery drills demonstrate data integrity ≥ 99.9% post-restore.  
+
+| **NF5 – Usability and User Satisfaction** | 
+UAT survey results show ≥ 80% satisfaction for ease-of-use and visual clarity.  
+Core actions (register, pay, check-in) achievable in ≤ 3 clicks/taps.  
+
+| **NF6 – Compliance and Maintainability** | 
+System adheres to PCI-DSS (for payments), PIPEDA (privacy), and internal MES guidelines.  
+Source code passes linting/static analysis with zero critical errors.  
+Documentation and test coverage ≥ 90% for core modules.  
+|===
+
+---
+
+==== Traceability and Acceptance Procedure
+1. **Requirement Traceability:** Each functional and non-functional requirement in the SRS is linked to one or more test cases in the V&V plan.  
+2. **Testing Evidence:** Test results, performance logs, and accessibility audit reports will be stored in the project repository.  
+3. **Stakeholder Review:** MES organizers and course supervisors will validate successful completion during UAT and Capstone demonstrations.  
+4. **Final Acceptance:** The system will be deemed accepted when all mandatory requirements meet or exceed defined acceptance criteria, verified results are documented, and formal sign-off is received from both MES and the course supervisor.
+
+---
+
 {emptysec}
