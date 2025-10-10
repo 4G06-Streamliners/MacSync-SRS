@@ -17,6 +17,7 @@
 | 2025-10-01 | Prerna | Completed S.1 Components
 | 2025-10-02 | Prerna | Completed E.2 Components
 | 2025-10-10 | Farhan | Completed P.2 Imposed technical choices
+| 2025-10-10 | Farhan | Completed P.7.2 - Threats and mitigation
 |===
 
 ifdef::author_1[]
