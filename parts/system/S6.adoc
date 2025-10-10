@@ -1,8 +1,64 @@
 [#s6,reftext=S.6]
-=== (S.6) Verification and acceptance criteria
+=== (S.6) Verification and Acceptance Criteria
 
-ifdef::env-draft[]
-TIP: _Specification of the conditions under which an implementation will be deemed satisfactory. Here, "verification" as shorthand for what is more explicitly called "Verification & Validation" (V&V), covering several levels of testing — module testing, integration testing, system testing, user acceptance testing — as well as other techniques such as static analysis and, when applicable, program proving._  <<BM22>>
-endif::[]
+==== Validation of Functional Requirements
 
-{emptysec}
+To validate the functional requirements of the MacSync system, the team will perform module, integration, system, and user acceptance testing (UAT).  
+
+* **Module testing** will verify that each component listed in <<s1>> performs its defined behavior independently.  
+* **Integration testing** will ensure seamless communication between frontend and backend modules.  
+* **System testing** will confirm end-to-end behavior, focusing on registration, payment, and analytics workflows.  
+* **User acceptance testing** will involve MES stakeholders performing real registration scenarios to confirm usability and correctness.
+
+==== Fit Criteria for Non-Functional Requirements
+
+* **Performance:** Core actions such as registration or payment confirmation shall respond within *2 seconds* under normal load.  
+* **Scalability:** The backend shall handle *500 concurrent users* without more than *10 percent* performance degradation.  
+* **Reliability:** Overall system uptime shall be *99 percent* during major event periods.  
+* **Security:** All user and payment data shall be encrypted with TLS 1.3 and stored following PCI-DSS and PIPEDA compliance.  
+* **Usability:** The registration process shall require *no more than three steps* and yield a *90 percent task-success rate* in UAT.  
+* **Notification timeliness:** Confirmation emails and in-app messages shall be delivered within *60 seconds* of completed registration.
+
+==== Selected Scenario for Testing
+
+The scenario *Register for an Event* (<<s4>>) is selected as the primary validation case since it exercises the full registration and payment workflow.
+
+===== Proposed Tests for "Register for an Event"
+
+1. **Registration Workflow Test**  
+- Objective: Verify that users can complete event registration from selection to confirmation.  
+- Procedure: Simulate a logged-in user selecting an event, filling the form, and completing payment.  
+- Expected Outcome: The system confirms registration, issues a QR code ticket, and sends notifications.
+
+2. **Payment Processing Test**  
+- Objective: Validate correct Stripe integration and recording of payment confirmations.  
+- Procedure: Execute sandbox transactions and verify backend receipt of success callbacks.  
+- Expected Outcome: Transaction details are saved and ticket marked “Paid”.
+
+3. **Waitlist Handling Test**  
+- Objective: Ensure users are queued when capacity is reached.  
+- Procedure: Attempt registration after capacity is full.  
+- Expected Outcome: User is added to waitlist and notified of position.
+
+4. **Error and Retry Test**  
+- Objective: Confirm proper recovery from payment or connection failures.  
+- Procedure: Interrupt payment midway and retry.  
+- Expected Outcome: Clear retry message; no duplicate transaction recorded.
+
+5. **Notification Delivery Test**  
+- Objective: Confirm that users receive confirmation messages promptly.  
+- Procedure: Check email logs and in-app notification queue post-registration.  
+- Expected Outcome: Notifications delivered within 60 seconds.
+
+==== Traceability Matrix
+
+[cols="3,3,4,2", options="header"]
+|===
+| *Test Case ID* | *Requirement ID* | *Requirement Description* | *Status*
+
+| TC-01 | <<F101,**F101**>> | System shall allow users to register for events and generate tickets. | Not Started
+| TC-02 | <<F105,**F105**>> | System shall integrate with Stripe API for secure payment processing. | Not Started
+| TC-03 | <<F103,**F103**>> | System shall manage user waitlists when event capacity is reached. | Not Started
+| TC-04 | <<NF102,**NF102**>> | System shall ensure data consistency to prevent overselling tickets. | Not Started
+| TC-05 | <<NF104,**NF104**>> | System shall encrypt payment and personal data following PCI-DSS. | Not Started
+|===
