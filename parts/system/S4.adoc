@@ -5,4 +5,121 @@ ifdef::env-draft[]
 TIP: _Examples of interaction between the environment (or human users) and the system, expressed as user stories. Such scenarios are not by themselves a substitute for precise descriptions of functionality (<<s3>>), but provide an important complement by specifying cases that these behavior descriptions must support; they also serve as a basis for developing test cases. The scenarios most relevant for stakeholders are given in chapter <<g5>> in the Goals book, at a general level, as use cases; in contrast, <<s4>> can refer to system components and functionality (from other chapters of the System book) as well as special and erroneous cases, and introduce more specific scenarios._  <<BM22>>
 endif::[]
 
-{emptysec}
+==== (S.4.1) Register for an Event
+
+• **Primary Actor**: Student User  
+• **Supporting Actors**: MES Event Organizers, Payment Gateway (Stripe)  
+• **Precondition**:  
+  - User has a valid MacID and is logged into MacSync.  
+  - At least one active event is published by MES organizers.  
+• **Trigger**: User selects an event and presses “Register”.  
+
+• **Main Success Scenario**:  
+  1. System displays event details (tickets, capacity, bus/table options, waivers).  
+  2. User selects ticket type and fills required details (dietary, accessibility).  
+  3. System validates availability.  
+  4. User proceeds to payment if required.  
+  5. System sends payment request to Stripe and receives confirmation.  
+  6. System confirms registration and issues a digital ticket (QR code).  
+  7. User receives confirmation via email and in-app notification.  
+
+• **Secondary Scenarios**:  
+  - If capacity is full, user is placed on a waitlist and notified of position.  
+  - If payment fails, system displays an error and allows retry.  
+
+• **Success Postcondition**: User is successfully registered, payment recorded, ticket issued, and capacity updated.
+
+==== (S.4.2) Join Bus or Table Sign-Up
+
+• **Primary Actor**: Student User  
+• **Supporting Actors**: Event Organizers, System (Seat Allocator)  
+• **Precondition**:  
+  - User is registered for the event.  
+  - Bus/table sign-up is enabled for that event.  
+• **Trigger**: User navigates to the “Logistics” tab and selects a bus or table slot.  
+
+• **Main Success Scenario**:  
+  1. System displays available buses/tables and remaining capacity.  
+  2. User selects preferred option.  
+  3. System locks the slot and verifies availability atomically to prevent overbooking.  
+  4. System records assignment and updates capacity in real time.  
+  5. User receives confirmation and can view group members.  
+
+• **Secondary Scenarios**:  
+  - If slot is taken during selection, system notifies user and shows remaining options.  
+  - If user changes their selection, system allows switching until cutoff time.  
+
+• **Success Postcondition**: User’s bus/table reservation is stored and visible to organizers for logistics planning.
+
+==== (S.4.3) Check-In at Event
+
+• **Primary Actor**: Event Volunteer / Organizer  
+• **Supporting Actors**: Student User, System (Scanner Module)  
+• **Precondition**:  
+  - Event is active.  
+  - User has a valid digital ticket (QR code).  
+• **Trigger**: Volunteer scans QR code using the MacSync Check-In interface.  
+
+• **Main Success Scenario**:  
+  1. System validates ticket and marks attendee as “Checked-In”.  
+  2. System displays attendee details (name, bus/table, dietary info).  
+  3. Volunteer confirms entry and system records timestamp.  
+  4. Attendance dashboard updates in real time.
+
+• **Secondary Scenarios**:  
+  - If ticket is invalid or already used, system displays an error with reason.
+
+• **Success Postcondition**: User is marked as checked in and attendance data updates in admin dashboard.
+
+==== (S.4.4) Create and Manage Events (Organizer/Admin)
+
+• **Primary Actor**: MES Organizer / Admin  
+• **Supporting Actors**: MES Executives (for approval), System (Admin Portal)  
+• **Precondition**:  
+  - Organizer has admin permissions.  
+• **Trigger**: Organizer clicks “Create Event” in the Admin Dashboard.  
+
+• **Main Success Scenario**:  
+  1. Organizer enters event details (title, date, capacity, ticket types, pricing, dietary/accessibility requirements).  
+  2. System validates required fields and saves as draft.  
+  3. Organizer adds optional bus/table sign-ups and uploads waiver template.  
+  4. Organizer can later edit event details or schedule notifications.  
+
+
+• **Success Postcondition**: Event is successfully created, reviewed, and published with specific event details and requirements.
+
+==== (S.4.5) Monitor Registrations and Analytics (Organizer/Executive)
+
+• **Primary Actor**: MES Organizer or Executive  
+• **Supporting Actors**: System (Analytics Module)  
+• **Precondition**:  
+  - User has access to the Analytics Dashboard.  
+• **Trigger**: Organizer or Executive navigates to the dashboard to monitor events.  
+
+• **Main Success Scenario**:  
+  1. System displays key performance metrics, total registrations, waitlist size, check-ins, and engagement trends.  
+  2. Organizer filters and compares data across events or time periods.  
+  3. System visualizes participation patterns (e.g. peak registration times, most popular events, demographic breakdowns).  
+  4. Organizers and executives use these insights to inform future event planning, capacity management, and communication strategies.  
+
+• **Secondary Scenarios**:  
+  - If non-privileged user attempts access, system denies with an error message.  
+
+• **Success Postcondition**: Organizers and executives gain actionable insights to improve future event design, attendee engagement, and overall MES event operations.
+
+==== (S.4.6) Handle Waitlist Updates
+
+• **Primary Actor**: System  
+• **Supporting Actors**: Student Users, Organizers  
+• **Precondition**:  
+  - Event has a waitlist.  
+  - A registered attendee cancels or refund is processed.  
+• **Trigger**: System detects available slot.  
+
+• **Main Success Scenario**:  
+  1. System identifies next user in waitlist queue.  
+  2. System notifies user of waitlist update and provides payment window.  
+  3. Upon payment confirmation, user is registered and removed from waitlist.  
+  4. If no response within window, next user is automatically notified.  
+
+• **Success Postcondition**: Event capacity remains consistent, and unused spots are filled efficiently.
