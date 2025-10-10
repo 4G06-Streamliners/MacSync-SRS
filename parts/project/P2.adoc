@@ -6,35 +6,35 @@ This section identifies the technical and organizational constraints imposed on 
 • **Common Technology Stack**:  
   - All capstone teams developing the MacSync system will adhere to a unified technology stack to ensure cross-team compatibility and simplified integration. This decision was made collaboratively across project groups to enable shared components to operate within a consistent environment.
 
-• **Frontend Framework (Vite + TanStack Router + TanStack Create with TypeScript)**:  
-  - The frontend is implemented using Vite for fast builds and hot module reloading, alongside TanStack Router and TanStack Create for type-safe, modular state management. TypeScript is mandated to enhance maintainability and code safety.  
-  - These technologies replace an earlier analysis based on Next.js, which was found to be restrictive for a single-page application (SPA) architecture and less suited for role-based dashboards. The decision to migrate was made to improve developer efficiency and ensure flexibility in future module integration.
+• **Frontend Framework**:  
+  - The frontend is implemented using Vite for fast builds and hot module reloading, alongside TanStack Router and TanStack Create for type-safe, modular state management. TypeScript is used to enhance maintainability and code safety.  
+  - These technologies replace an earlier consideration of Next.js, which was found to be restrictive for a single-page application (SPA) architecture and less suitable for dynamic, role-based dashboards that rely on client-side routing and real-time state management. The migration to Vite and TanStack improves flexibility, developer efficiency, and integration with the external NestJS backend.
 
-• **Backend Framework (NestJS with REST APIs)**:  
+• **Backend Framework**:  
   - The backend is implemented using NestJS, chosen for its strong TypeScript support, modular structure, and built-in dependency injection.  
   - Each capstone team develops independent backend modules that integrate into a larger unified repository. This structure allows for separation of subsystem responsibilities (e.g., event management, registration, analytics) while maintaining consistent API conventions across the entire MacSync platform.  
   - RESTful APIs are used to facilitate straightforward communication between the frontend and backend.
 
-• **Database and ORM (PostgreSQL with DrizzleORM)**:  
-  - PostgreSQL is selected as the system’s relational database due to its reliability, scalability, and strong community support. It provides a mature and well-documented foundation for event registration, ticketing, and analytics data.  
+• **Database and ORM**:  
+  - PostgreSQL is selected as the system’s relational database due to its reliability, scalability, and strong community support. It provides a mature and well-documented foundation for event registration, ticketing, and analytics data. The data model in MacSync including users, events, tickets, waitlists, and logistics, naturally follows a relational structure with clear entity relationships and constraints, making PostgreSQL a suitable and logical choice.  
   - The database will be self-managed through Docker containers during development to allow local testing and consistent environments across all project teams. In production, MES will deploy the database within its DigitalOcean infrastructure.  
   - DrizzleORM is used for type-safe database operations and schema management within the TypeScript ecosystem. This modern ORM is preferred over older or heavier frameworks such as TypeORM or Prisma, offering improved performance and closer integration with the chosen NestJS backend.  
   - The decision to use a single ORM across all capstone groups was made to ensure unified migration handling and compatibility between independently developed modules. While multiple ORM options were technically possible, standardizing on DrizzleORM simplifies collaboration and guarantees consistent database migrations across the shared PostgreSQL schema.  
   - These decisions were made after discussion with the project supervisor and other groups, prioritizing modern tooling, maintainability, and ease of integration within a multi-team development environment.
 
-• **Payment Integration (Stripe)**:  
+• **Payment Integration**:  
   - Stripe is designated as the official payment gateway for ticket sales and event transactions.  
   - This ensures that the system develops PCI-compliant handling of payment data and supports future MES integration with other financial systems.
 
-• **Notifications (System Notification and Email Services)**:  
+• **Notifications**:  
   - The system will include support for both in-app notifications and automated email messages.  
   - These services are used for event reminders, registration confirmations, and administrative updates to organizers and attendees. The exact implementation of the notification provider may vary, but message delivery will be unified across teams to ensure consistency.
 
-• **Hosting and Deployment (DigitalOcean – Managed by MES)**:  
+• **Hosting and Deployment**:  
   - Final deployment and hosting responsibilities will be managed by the McMaster Engineering Society (MES) using DigitalOcean infrastructure.  
   - While this configuration is outside the current capstone development scope, all project modules are being designed with containerization and portability in mind to facilitate later deployment by MES staff.
 
-• **Version Control and Continuous Integration (GitHub)**:  
+• **Version Control and Continuous Integration**:  
   - All project codebases are maintained in private GitHub repositories.  
   - GitHub is used for version control, issue tracking, and coordination between teams.  
   - Continuous integration workflows are configured to ensure automated builds and documentation generation. This provides consistent quality assurance across repositories and prevents environment inconsistencies between teams.
