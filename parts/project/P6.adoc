@@ -5,5 +5,10 @@ ifdef::env-draft[]
 TIP: _Potential obstacles to meeting the schedule of <<p4>>, and measures for adapting the plan if they do arise. It is essential to be on the lookout for events that could derail the project, and devise mitigation strategies. It can include a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for the project._  <<BM22>>
 endif::[]
 
+• **Integration and Module Dependency Misalignment**  
+  - **Description:** Since each capstone team is responsible for developing separate modules that will later integrate into a shared MacSync repository, inconsistencies in API contracts, data models, or technology versions could delay integration and cause major refactoring work late in development.  
+  - **Mitigation Mechanisms:** Establish clear interface definitions and shared schema documentation early in the project. Conduct regular integration checkpoints between teams to identify incompatibilities before final merging. Maintain alignment through shared test/mock data, and frequent communication between teams to ensure extra time is considered for this integration phase.
 
-{emptysec}
+• **Schedule Delays and Coordination Challenges**  
+  - **Description:** Tight milestone deadlines and interdependent deliverables increase the risk of schedule slippage, especially when documentation, backend, and frontend progress must all align for project completion.  
+  - **Mitigation Mechanisms:** Break larger tasks into smaller, trackable subtasks using GitHub issues and GitHub projects. Hold weekly progress meetings to monitor task completion, identify blockers early, and reassign workloads if needed. Maintain extra buffer time before major milestones to accommodate integration testing and unforeseen delays.
