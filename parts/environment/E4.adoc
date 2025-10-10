@@ -6,5 +6,11 @@ TIP: _Properties of the environment that may be assumed, with the goal of facili
 endif::[]
 
 
-{emptysec}
+Some assumptions made can be found below:
+
+* **Operating system support**: We assume our application only needs to support modern operating systems for both computer (Windows and MacOS) and mobile purposes (Android and iOS), meaning other systems are excluded from our scope. Additionally, we will support the relevant versions of the operating systems that are used by the majority of people and cover a large part of the target market.
+
+* **Compliance Alignment**:  We assume that all MES events that are posted on the platform comply with University and legal standards for student run events. The platform will not introduce any new regulatory safeguards.
+
+* **Standardized payment infrastructure support**: We assume that the payment infrastructure provided by the selected payment provider is functional and reliable with APIs exposed for usage within the MES system.
 
