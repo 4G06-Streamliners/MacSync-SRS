@@ -5,4 +5,68 @@ ifdef::env-draft[]
 TIP: _Groups of people who can affect the project or be affected by it, and other places to consider for information about the project and system. It lists stakeholders and other requirements sources. It should define stakeholders as categories of people, not individuals, even if such individuals are known at the time of writing. The main goal of chapter <<g7>> is to avoid forgetting any category of people whose input is relevant to the project. It also lists documents and other information that the project, aside from soliciting input from stakeholders, can consult for requirements information._  <<BM22>>
 endif::[]
 
-{emptysec}
+==== G.7.1 Stakeholder Table
+[cols="2,2,4", options="header"]
+|===
+| Stakeholder Type | Stakeholder | Description
+
+| Direct
+| Event Attendees 
+| Students registering for and attending MES events who interact with the signups, ticketing, payment and RSVP systems.
+
+| Direct
+| Event Organizers 
+| MES club members responsible for event logistics from planning, managing and executing events.
+
+| Direct
+| Sponsors/Promoters
+| Companies or businesses interested in promoting their brand by associating with clubs and sponsoring events.
+
+| Indirect
+| University Administration
+| Interested in and overseeing compliance with institutional and legal laws and policies on events.
+
+| Indirect
+| Capstone Development Team
+| Responsible for building and maintaining the platform, integrating features to align with requirements.
+
+|===
+
+==== G.7.2 Personas Table
+[cols="2,2,2,4", options="header"]
+|===
+| Stakeholder Type | Stakeholder | Persona Name | Persona Description
+
+| Direct
+| Event Attendees 
+| James Thompson
+| A first year business student interested in attending events throughout his academic career to meet new people and gain new experiences.
+
+| Direct
+| Event Organizers 
+| Sarah Davis
+| An MES club executive striving to attract visitors by planning event logistics and executing them.
+
+| Direct
+| Sponsors/Promoters
+| Laura Nguyen
+| A marketing manager of a small business focused on promoting her company's brand and sponsoring an event.
+
+| Indirect
+| University Administration
+| Ahmed Patel
+| A University admin that is focused on ensuring the platform and the events within them comply with McMaster’s financial and data policies.
+
+| Indirect
+| Capstone Development Team
+| Alex Kim
+| Developer responsible for developing the platform and integrating features from payment systems to RSVP signups to create a seamless, engaging user experience.
+
+|===
+
+==== G.7.3 Additional Requirements Sources
+- **User Feedback Surveys**:  Surveys from users to provide insights into feature preference and areas for improvement.
+
+- **University Policy Documents**: Guidelines on policies regarding accessibility standards and privacy, legal and financial compliance.
+
+- **Industry Practices:**: Analysis of other event management platforms for design and feature inspiration and implementation.
