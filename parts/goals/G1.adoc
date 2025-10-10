@@ -1,9 +1,16 @@
 [#g1,reftext=G.1]
 === (G.1) Context and Overall Objectives
 
-ifdef::env-draft[]
-TIP: _High-level view of the project: organizational context and reason for building a system. It explains why the project is needed, recalls the business context, and presents the general business objectives._  <<BM22>>
-endif::[]
+The Large Event Management System (LEMS) is being developed to support the McMaster Engineering Society (MES) in planning and running large events such as formals, conferences, and national surveys. These events bring together many participants and require coordination of ticket sales, registrations, payments, waivers, bus and table sign-ups, and event check-ins.  
 
-{emptysec}
+Currently, organizers rely on tools like Google Forms, Google Sheets, Instagram, and Discord. This approach spreads information across different platforms, creates inefficiencies, and increases the amount of manual work. It also results in a less consistent experience for participants, who often need to use multiple systems depending on the event.  
 
+The goal of LEMS is to provide a single system that centralizes these processes. The expected outcomes are:  
+
+* Centralized registration, payments, waivers, scheduling, and check-ins  
+* Greater efficiency for organizers through reduced manual coordination and better reporting  
+* A consistent participant experience on both web and mobile interfaces  
+* Flexibility to support different event types, from formals to national surveys  
+* A sustainable platform that can continue to be used in future years  
+
+This project addresses current challenges while also creating a long-term solution for MES. In the near term, it will support events such as the Fireball Formal, CALE Conference, and CFES National Survey. In the long term, it will provide a reliable and reusable platform that future students can maintain and expand.

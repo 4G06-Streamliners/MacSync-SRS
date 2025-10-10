@@ -1,8 +1,27 @@
 [#g3,reftext=G.3]
 === (G.3) Expected Benefits
 
-ifdef::env-draft[]
-TIP: _New processes, or improvement to existing processes, made possible by the project's results. It presents the business benefits expected from the successful execution of the project. **This chapter is the core of the Goals book**, describing what the organization expects from the system. It ensures that the project remains focused: if at some stage it gets pushed in different directions, with “creeping featurism” threatening its integrity, a reminder about the original business goals stated in those chapters will help._  <<BM22>>
-endif::[]
+The successful completion of this project will result in several key business benefits, directly addressing the challenges identified in G.1 and G.2. These benefits represent improvements to current processes and new capabilities made possible by the system.
 
-{emptysec}
+*Centralized Registration & Ticketing*::
+By consolidating ticket purchasing, RSVPs, and waivers into one platform, students will have a consistent and reliable source of event information. This centralization reduces confusion, eliminates the need for scattered tools like spreadsheets, Google Forms, posters, instagram stories/posts, and ensures attendees have access to the latest updates at all times. For organizers, it significantly decreases redundant manual work, allowing them to focus more on event quality and participant engagement.
+
+*Payment Integration*::
+Secure and flexible payment options (Stripe, Square, PayPal) will reduce risks associated with cash handling and provide students with fast, reliable payment methods. This creates trust between attendees and organizers while ensuring financial data is accurately tracked in real time.
+
+*Role-Based Access Control (RBAC/FBAC)*::
+Granular permissions improve security and operational efficiency by ensuring organizers only access the tools relevant to their responsibilities. This reduces human error, improves accountability within event teams, and allows large-scale events to be managed more smoothly.
+
+*Bus & Table Sign-ups*::
+Automated reservations with built-in capacity tracking will simplify logistics and eliminate overbooking. This reduces stress on organizers, prevents conflicts during event planning, and provides students with a transparent and fair reservation system.
+
+*Notifications & Reminders*::
+Timely push notifications and reminders will improve event memorability, reduce no-shows, and prevent students from missing important updates. Organizers will also benefit from improved communication channels that minimize last-minute confusion and improve turnout rates.
+
+*Analytics & Reporting*::
+Real-time dashboards will empower organizers and MES executives to make data-driven decisions. By providing insights into demographics, sales, accessibility needs, and financial tracking, the system enhances resource allocation, inclusivity, and overall evaluation of event success.
+
+*Attendee Experience*::
+A mobile-first, intuitive, and accessible platform ensures that all students including those with accessibility or dietary needs can easily participate. This not only maximizes engagement but also reinforces inclusivity and fairness as core values of MES events.
+
+In the long term, these benefits establish a sustainable and scalable foundation for MES event management. The system reduces administrative burden, improves user satisfaction, and ensures the continuity of high-quality student experiences. Additionally, the modular nature of the platform supports future expansions, including personalized recommendations, sponsor visibility, and post-event engagement features, keeping the system adaptable to evolving needs.
