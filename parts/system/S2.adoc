@@ -20,7 +20,7 @@
 
 ===== Functional Requirements
 
-. [[F105]] **Stripe integration:** The backend shall connect to Stripe’s API for all credit/debit card transactions. (F105)
+. [[F105]] **Payment gateway integration:** The backend shall integrate with a payment gateway API for all credit/debit card transactions. (F105)
 . [[F106]] **Transaction verification:** The system shall confirm successful payment and record transaction details in PostgreSQL. (F106)
 . [[F107]] **Refund processing:** The system shall synchronize refund actions initiated through the admin dashboard or Stripe interface. (F107)
 
