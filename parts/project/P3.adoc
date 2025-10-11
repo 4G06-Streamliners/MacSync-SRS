@@ -5,4 +5,57 @@ ifdef::env-draft[]
 TIP: _List of tasks to be carried out and their scheduling. It defines the project's key dates._  <<BM22>>
 endif::[]
 
-{emptysec}
+
+=== (P.3) Schedule and milestones
+
+
+TIP: _List of tasks to be carried out and their scheduling. It defines the project's key dates._  <<BM22>>
+
+
+==== P.3.1 Sprint Plan
+
+===== Sprint 1: Core Foundations & Architecture (October 13 – October 31)
+* *Epics:*
+** Establish development environment (CI/CD, database schemas).
+** Implement initial UI mockups and API skeleton for proof of concept demo.
+** Plan modules for Payments, RBAC/FBAC, and Sign-Up Systems.
+** Add basic user authentication.
+
+* *Deliverables:*
+** Repository steup for build/deploy pipeline.
+** Database schema for Users, Permissions, and Payment Transactions.
+** Prototype login and role access demo.
+
+===== Sprint 2: RBAC + Sign-Up Modules / PoC Demo (Nov 1 – Nov 30)
+* *Epics:*
+** Implement Mac SSO authentication.
+** Add role-based access controls. 
+** Develop Bus/Table/RSVP Sign-Up system with capacity validation.
+** Link Sign-Ups to user IDs and organizer dashboards.
+
+* *Deliverables:*
+** Functional RBAC/FBAC system.
+** Working Sign-Up frontend + backend.
+** Mac SSO.
+
+===== Sprint 3: Payment System Integration (Dec 1 – Dec 31)
+* *Epics:*
+** Implement Payment Gateway.
+** Integrate payments with existing registration and sign-up records..
+
+* *Deliverables:*
+** Working Payment Gateway service (MVP).
+** Payment transaction logs and admin verification dashboard.
+
+===== Sprint 4: Integration & Deployment (Jan 1 – Jan 15)
+* *Epics:* 
+** Integrate Payments, RBAC, and Sign-Ups into a single deployable MVP (with other groups of MES)
+** Add notification and calendar sync features.
+** Conduct final V&V and security testing.
+** Deploy to McMaster users 
+
+* *Deliverables:*
+** Integrated MVP platform deployed
+
+At the end of sprint 2 we will have developed the core features for the sign-ups and login. With these 2 features we will be able to show our stakeholders a proof of concept demo to get early feedback for further development. By sprint 4 we will have developed the payment gateway and integrating all the components together to produce a MVP to be tested and deployed. This will be an early access application to get feedback from users what they think of the app and how we can further the event registration experience.
+
