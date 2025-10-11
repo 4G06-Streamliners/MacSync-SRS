@@ -110,6 +110,5 @@ endif::[]
 6. Organizers can later view and export this data to support event preparation and accommodation planning.
 
 ---
-{emptysec}
 
 

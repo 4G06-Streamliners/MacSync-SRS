@@ -33,4 +33,4 @@ The following external components represent the environment in which the Large E
   Represents the hardware/software environments in which the system must run reliably. 
   Includes smartphones for attendees and laptops/desktops for organizers.
 
-{emptysec}
+

@@ -26,5 +26,3 @@ The system relies on the following **hardware components**:
 * **QR Code Scanners (Smartphone Cameras or Organizer Devices)** :: Used at event entrances to validate attendee tickets efficiently.
 
 Together, these components define the operational structure of the system and highlight the dependencies critical for secure and reliable operation.
-
-{emptysec}

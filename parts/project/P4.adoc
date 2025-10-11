@@ -57,5 +57,3 @@ Final reports, presentations, and documentation will continue through April 2026
 This schedule ensures that all core Project B deliverables — Payment Integration, RBAC/FBAC, and Bus/Table/RSVP Systems are completed by the end of the Fall 2025 term for functional validation, with
  enhancements and integration tasks completed in Winter 2026 prior to production testing at major MES events.  
 
-
-{emptysec}
