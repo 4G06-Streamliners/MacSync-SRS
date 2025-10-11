@@ -22,6 +22,7 @@
 | 2025-10-10 | Farhan | Completed S.4 Interactions
 | 2025-10-10 | Farhan | Completed P.2 Imposed technical choices
 | 2025-10-10 | Farhan | Completed P.7.2 - Threats and mitigation
+| 2025-10-10 | Mahad | Completed P.7 Requirements process and report
 |===
 
 ifdef::author_1[]
