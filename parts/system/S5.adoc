@@ -158,4 +158,45 @@ Medium (Should have) |
 Adds audit transparency which can help with transparency. 
 |===
 
+==== (S.5.5) Priority Table for Privacy, Data Integrity, and Security Controls
+
+[cols="2,2,1,2"]
+|===
+|Requirement ID | Requirement Name | Priority Level | Reasoning
+
+|<<F114>> |
+Data encryption |
+High (Must have) |
+Core to protecting user and financial data.
+
+|<<F115>> |
+Authentication and authorization |
+High (Must have) |
+Essential to secure user sessions and McMaster access.
+
+|<<F116>> |
+Regulatory compliance |
+High (Must have) |
+Mandatory McMaster and legal policies (PIPEDA).
+
+|<<NF113>> |
+Confidentiality |
+High (Must have) |
+Prevents unauthorized access to sensitive data.
+
+|<<NF114>> |
+Integrity |
+High (Must have) |
+Ensures that financial and registration records remain consistent.
+
+|<<NF115>> |
+Availability |
+High (Must have) |
+Guarantees system uptime during registration.
+|===
+
+==== (S.5.2) Prioritization Analysis
+The prioritization reflects the systems core components such as signing up for events, processing payments and role base access system. Furthermore, it emphasizes security and reliability to prevent sensitive user data. The Medium priority items focus on nice-to-have features that will optimize the system but are not essential for the MVP itself.
+
+
 
