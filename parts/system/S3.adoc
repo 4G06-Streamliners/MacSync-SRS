@@ -12,11 +12,11 @@ The MES system offers several external interfaces, which facilitate interaction 
 [float]
 .API Endpoints for User Interaction
 [cols="1,1,2", options="header"]
-| ================ | ====== | ================================================================================================================================================================ |
-| Endpoint         | Method | Description                                                                                                                                                      |
-| /dashboard/user  | GET    | Retrieves information related to upcoming events, the events a user signed up to and current sign-up status on those events.                                     |
-| /dashboard/admin | GET    | Retrieves admin information related to event metrics, role details, and consolidates information on events they have set up from signups to payment information. |
-| ================ | ====== | ================================================================================================================================================================ |
+|===
+| Endpoint | Method | Description
+| /dashboard/user | GET | Retrieves information related to upcoming events, the events a user signed up to, and current sign-up status on those events.
+| /dashboard/admin | GET | Retrieves admin information related to event metrics, role details, and consolidates information on events they have set up from signups to payment information.
+|===
 
 The User Interface API enables engagement through core functions such as giving admins a dashboard to view their event details and also giving users a dashboard to keep track of events going on, signed up events, and user profile details.
 
@@ -25,14 +25,14 @@ The User Interface API enables engagement through core functions such as giving 
 [float]
 .API Endpoints for Payment System Services
 [cols="1,1,2", options="header"]
-| ================================= | ====== | ====================================================================================================================== |
-| Endpoint                          | Method | Description                                                                                                            |
-| /payments                         | POST   | Initiates a new payment transaction for ticket purchases, providing users the ability to put in their payment details. |
-| /payments/{transactionID}         | GET    | Retrieves all user payment details                                                                                     |
-| /payments/{transactionID}/confirm | POST   | Allows users to confirm their payment transaction.                                                                     |
-| /payments/{transactionID}/refund  | POST   | Allows users to submit a refund request and process them.                                                              |
-| /payments/{transactionID}/status/ | GET    | Retrieves current status of the payment transaction made by the user (pending, complete or failed).                    |
-| ================================= | ====== | ====================================================================================================================== |
+|===
+| Endpoint | Method | Description
+| /payments | POST | Initiates a new payment transaction for ticket purchases, providing users the ability to put in their payment details.
+| /payments/{transactionID} | GET | Retrieves all user payment details.
+| /payments/{transactionID}/confirm | POST | Allows users to confirm their payment transaction.
+| /payments/{transactionID}/refund | POST | Allows users to submit a refund request and process them.
+| /payments/{transactionID}/status | GET | Retrieves current status of the payment transaction made by the user (pending, complete, or failed).
+|===
 
 The Payment System API leverages external payment gateways to manage all financial interactions within the platform related to tickets, transactions and payment status. The endpoints allow smooth and secure handling of data to ensure a transparent user experience.
 
@@ -41,13 +41,13 @@ The Payment System API leverages external payment gateways to manage all financi
 [float]
 .API Endpoints for Access Controls
 [cols="1,1,2", options="header"]
-| =========================== | ====== | ================================================================================================= |
-| Endpoint                    | Method | Description                                                                                       |
-| /auth/login                 | POST   | Authenticates user credentials, managing user authentication to ensure secure access to accounts. |
-| /auth/logout                | POST   | Ends user session and clears sensitive session data.                                              |
-| /roles/permissions/{userId} | GET    | Retrieves access rights granted to a specific user.                                               |
-| /roles/permissions/{userId} | PUT    | Updates a user's role and feature based access.                                                   |
-| =========================== | ====== | ================================================================================================= |
+|===
+| Endpoint | Method | Description
+| /auth/login | POST | Authenticates user credentials, managing user authentication to ensure secure access to accounts.
+| /auth/logout | POST | Ends user session and clears sensitive session data.
+| /roles/permissions/{userId} | GET | Retrieves access rights granted to a specific user.
+| /roles/permissions/{userId} | PUT | Updates a user's role and feature-based access.
+|===
 
 The Role Based Access Control / Feature Based Access Control API is critical for determining the type of access rights for each user type, governing authorization across the platform so that users can only access features they are permitted to as well as allowing admins to assign access.
 
@@ -56,14 +56,14 @@ The Role Based Access Control / Feature Based Access Control API is critical for
 [float]
 .API Endpoints for Event Management System
 [cols="1,1,2", options="header"]
-| ================= | ====== | ================================================================== |
-| Endpoint          | Method | Description                                                        |
-| /events           | POST   | Allows admins to create an event with details and content.         |
-| /events           | GET    | Retrieves a list of all events created by an admin.                |
-| /events/{eventId} | GET    | Allows admin to retrieve all content details for a specific event. |
-| /events/{eventId} | PUT    | Allows admin to update existing event details and content.         |
-| /events/{eventId} | DELETE | Allows admin to delete existing event details and content.         |
-| ================= | ====== | ================================================================== |
+|===
+| Endpoint | Method | Description
+| /events | POST | Allows admins to create an event with details and content.
+| /events | GET | Retrieves a list of all events created by an admin.
+| /events/{eventId} | GET | Allows admin to retrieve all content details for a specific event.
+| /events/{eventId} | PUT | Allows admin to update existing event details and content.
+| /events/{eventId} | DELETE | Allows admin to delete existing event details and content.
+|===
 
 The Event Management System API gives administrators the ability to manage, create and update events so that they are able to have their events available for users to see and also ensure content remains relevant and up to date.
 
@@ -72,15 +72,15 @@ The Event Management System API gives administrators the ability to manage, crea
 [float]
 .API Endpoints for Sign-Ups System
 [cols="1,1,2", options="header"]
-| ========================== | ====== | ================================================================================= |
-| Endpoint                   | Method | Description                                                                       |
-| /signups/list              | GET    | Allows users to see a list of all signups available on events.                    |
-| /signups/{signupId}/rsvp   | POST   | Allows users to rsvp for a specific event.                                        |
-| /signups/{signupId}/bus    | POST   | Allows users to reserve seats on a bus for a specific event.                      |
-| /signups/{signupId}/table  | POST   | Allows users to reserve seats on a table for a specific event.                    |
-| /signups/{signupId}/cancel | DELETE | Cancels users signup to a specific event.                                         |
-| /signups/{signupId}/status | GET    | Retrieves status of a specific event a user signed up to (waitlist or confirmed). |
-| ========================== | ====== | ================================================================================= |
+|===
+| Endpoint | Method | Description
+| /signups/list | GET | Allows users to see a list of all signups available on events.
+| /signups/{signupId}/rsvp | POST | Allows users to RSVP for a specific event.
+| /signups/{signupId}/bus | POST | Allows users to reserve seats on a bus for a specific event.
+| /signups/{signupId}/table | POST | Allows users to reserve seats on a table for a specific event.
+| /signups/{signupId}/cancel | DELETE | Cancels user's signup to a specific event.
+| /signups/{signupId}/status | GET | Retrieves status of a specific event a user signed up to (waitlist or confirmed).
+|===
 
 The Sign-Ups API allows event attendees to see all event signups, sign up for specific events by confirming details about rsvp, buses or tables, see their status on a specific event and also cancel their signup. The API manages capacity limits, waitlists and provides real-time information helpful to both users and admins.
 
