@@ -1,8 +1,50 @@
 [#p5,reftext=P.5]
 === (P.5) Required technology elements
 
-ifdef::env-draft[]
-TIP: _External systems, hardware and software, expected to be necessary for building the system. It lists external technology elements, such as program libraries and hardware devices, that the project is expected to require. Although the actual use of such products belongs to design and implementation rather than requirements, it is part of the requirements task to identify elements whose availability is critical to the success of the project — an important element of risk analysis (<<p6>>)._  <<BM22>>
-endif::[]
+*External Software Dependencies*:
 
-{emptysec}
+** *Stripe API (Payment Gateway):*  
+Required for secure handling of online ticket purchases and event payments. Stripe provides PCI-compliant transaction processing, webhooks for event confirmations, and a sandbox environment for testing. The availability of API credentials and stable versions is critical to ensure uninterrupted payment services.
+
+** *DrizzleORM and PostgreSQL:*  
+PostgreSQL serves as the relational database for storing user, event, and financial data, while DrizzleORM provides type-safe schema management and migration capabilities within the TypeScript ecosystem. PostgreSQL will be containerized using Docker for development, with production deployment managed by MES through DigitalOcean. The reliability of these components is essential to data integrity and inter-team compatibility.
+
+** *Email and Notification Services (e.g., Nodemailer, Resend, or SendGrid):*  
+Used for automated messaging such as registration confirmations, reminders, and administrative alerts. Availability of SMTP or API configurations is necessary for dependable communication.
+
+** *Frontend Libraries (Vite + TanStack Router + TanStack Create + TypeScript):*  
+Used for building the single-page application interface. These depend on the Node.js and npm ecosystems for package management. Any compatibility or deprecation issues in these frameworks could delay interface development.
+
+** *UI and Component Libraries:*  
+The frontend will rely on open-source React component systems such as ShadCN/UI, Lucide-React icons, and form libraries (e.g., React Bootstrap) to accelerate user interface creation while maintaining accessibility and consistency.
+
+** *Version Control and CI/CD Tools (GitHub + GitHub Actions):*  
+GitHub is used for version control, collaboration, and issue tracking. GitHub Actions supports continuous integration for automated builds, testing, and documentation generation.
+
+
+*External Infrastructure and Hardware*:
+
+** *DigitalOcean Infrastructure (Managed by MES):*  
+Used for hosting backend and database services in production. The infrastructure must support containerized deployments, SSL/TLS certificates, and routine backups to ensure availability during high-traffic events.
+
+** *Docker Engine:*  
+Required for local development, testing, and containerization of services to maintain uniform environments across all capstone teams.
+
+** *QR Code Scanning Devices:*  
+Mobile phones or tablets equipped with cameras will be necessary for attendee check-in and waiver validation at events. Reliable hardware access is critical for smooth on-site operations.
+
+
+*Critical Availability Summary*:
+
+|===
+| *Component* | *Purpose* | *Type* | *Criticality*
+
+| Stripe API | Payment processing and ticketing | External service | *High*
+| PostgreSQL + DrizzleORM | Data persistence and ORM | Software | *High*
+| DigitalOcean | Hosting and production deployment | Infrastructure | *High*
+| Email / Notification Services | Automated messaging | External service | *Medium*
+| TanStack / Vite / TypeScript | Frontend development | Software | *Medium*
+| Docker | Containerization and local parity | Software | *High*
+| GitHub + CI/CD | Version control and automation | Platform | *Medium*
+| QR Code Scanning Devices | Event check-in hardware | Hardware | *Medium*
+|===
