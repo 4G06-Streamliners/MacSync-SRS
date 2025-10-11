@@ -5,6 +5,8 @@ ifdef::env-draft[]
 TIP: _Classification of the behaviors, interfaces and scenarios (<<s2>>, <<s3>> and <<s4>>) by their degree of criticality. It is useful in particular if during the course of the project various pressures force the team to drop certain functions._  <<BM22>>
 endif::[]
 
+==== (S.5.1) Priority Table for Event Registration and Ticketing
+
 [cols="2,2,1,2"]
 |===
 |Requirement ID | Requirement Name | Priority Level | Reasoning
@@ -14,11 +16,35 @@ Event browsing and registration |
 High (Must have) |
 Core functionality — users must be able to view events and register to participate.
 
-|<<F101>> |
-Event browsing and registration |
+|<<F102>> |
+Ticket purchasing and invoicing |
 High (Must have) |
-Core functionality — users must be able to view events and register to participate.
+Essential for validating registrations and enabling payment records.
 
-|Cell in column 1, row 4
-|Cell in column 2, row 4
+|<<F103>> |
+Waitlist management |
+Medium (Should have) |
+Improves user experience but not critical for initial MVP launch.
+
+|<<F104>> |
+Cancellation and refunds |
+Medium (Should have) |
+Important for flexibility and user trust, but can be introduced post-MVP.
+
+|<<NF101>> |
+Performance |
+High (Must have) |
+Directly impacts user satisfaction and perceived reliability.
+
+|<<NF102>> |
+Data integrity |
+High (Must have) |
+Prevents overbooking and financial inconsistencies.
+
+|<<NF103>> |
+Usability |
+Medium (Should have) |
+Improves UX clarity, desirable but not mission-critical.
 |===
+
+==== (S.5.2) Priority Table for Payment Processing Module
