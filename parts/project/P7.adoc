@@ -5,4 +5,24 @@ ifdef::env-draft[]
 TIP: _Initially, description of what the requirements process will be; later, report on its steps. It starts out as a plan for conducting the requirements elicitation process, but is meant to be updated as part of that process so that it includes the key lessons of elicitation._  <<BM22>>
 endif::[]
 
-{emptysec}
+==== (P.7.1) Interviews with Direct Stakeholders
+
+* *MES Event Organizers(<<Sarah Davis>>)*
+** *Type of Interview:* *Hybrid*. To understand how the MES currently plans, promotes, and executes events, uncover inefficiencies in the process, and align the MacSync platform’s design and functionality with MES’s overall vision for improved event management and engagement.
+** *Most Important Question:* What outcomes define success that we should be aiming for to align with your vision for the MacSync platform? From the initial announcement of an event to the start time, where do we lose the most time? What platforms don’t gain a lot of traction, and why are users not aware of certain events?
+
+* *Students/Attendees (<<James Thompson>>)*
+** *Type of Interview: Closed*. The purpose of this interview is to gather information on why students aren't showing up to events. This interview will be very similar to a survey.
+** *Most Important Question:* Are you aware of MES events? What platforms do you view the announcements of events? What step of the registration process do you feel hesitant to continue?
+
+* *University Administration (<<Ahmed Patel>>)*
+** *Type of Interview: Closed*. This format ensures that specific compliance, policy, and governance-related details are clearly captured.
+** *Most Important Question:* To understand the university’s financial, data security, and compliance requirements that the MacSync platform must adhere to.
+
+* *Sponsors (<<Laura Nguyen>>)*
+** *Type of Interview: Open*. This format encourages an open dialogue to explore how sponsors interact with student events. It allows us to understand their motivations with sponsoring MES events.
+** *Most Important Question:* What features would make sponsoring or promoting events through MacSync most valuable to your business and worth investment?
+
+==== (P.7.2) Justification for Interviews
+
+The interview types and questions listed above are tailored to each persona to gather the relevant facts of the short comings of the current MES event hosting eco system. The information gathered will help in translating these pain points into functional and non-functional requirements.
