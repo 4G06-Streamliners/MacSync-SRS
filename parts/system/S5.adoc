@@ -14,7 +14,7 @@ endif::[]
 |<<F101>> |
 Event browsing and registration |
 High (Must have) |
-Core functionality — users must be able to view events and register to participate.
+Core functionality for users, must be able to view events and register to participate.
 
 |<<F102>> |
 Ticket purchasing and invoicing |
@@ -29,7 +29,7 @@ Improves user experience but not critical for initial MVP launch.
 |<<F104>> |
 Cancellation and refunds |
 Medium (Should have) |
-Important for flexibility and user trust, but can be introduced post-MVP.
+Important for flexibility and user trust, but can be introduced after MVP.
 
 |<<NF101>> |
 Performance |
@@ -48,3 +48,38 @@ Improves UX clarity, desirable but not mission-critical.
 |===
 
 ==== (S.5.2) Priority Table for Payment Processing Module
+
+[cols="2,2,1,2"]
+|===
+|Requirement ID | Requirement Name | Priority Level | Reasoning
+
+|<<F105>> |
+Stripe integration |
+High (Must have) |
+Necessary to handle secure credit/debit payments.
+
+|<<F106>> |
+Transaction verification |
+High (Must have) |
+Ensures payment confirmation and successful transactions.
+
+|<<F107>> |
+Refund processing |
+Medium (Should have) |
+Important for user trust, but can come after MVP.
+
+|<<NF104>> |
+Security compliance |
+High (Must have) |
+PCI-DSS compliance is mandatory for financial data handling.
+
+|<<NF105>> |
+Reliability |
+High (Must have) |
+Payment service must remain stable during registration spikes.
+
+|<<NF106>> |
+Auditability |
+Medium (Should have) |
+Important for financial transparency, but can be implemented after MVP.
+|===
