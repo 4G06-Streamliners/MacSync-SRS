@@ -11,7 +11,7 @@ The MES system offers several external interfaces, which facilitate interaction 
 
 [float]
 .API Endpoints for User Interaction
-[cols="1,1,2", options="header"]
+[cols="2,1,2", options="header"]
 |===
 | Endpoint | Method | Description
 | /dashboard/user | GET | Retrieves information related to upcoming events, the events a user signed up to, and current sign-up status on those events.
@@ -24,7 +24,7 @@ The User Interface API enables engagement through core functions such as giving 
 
 [float]
 .API Endpoints for Payment System Services
-[cols="1,1,2", options="header"]
+[cols="2,1,2", options="header"]
 |===
 | Endpoint | Method | Description
 | /payments | POST | Initiates a new payment transaction for ticket purchases, providing users the ability to put in their payment details.
@@ -40,7 +40,7 @@ The Payment System API leverages external payment gateways to manage all financi
 
 [float]
 .API Endpoints for Access Controls
-[cols="1,1,2", options="header"]
+[cols="2,1,2", options="header"]
 |===
 | Endpoint | Method | Description
 | /auth/login | POST | Authenticates user credentials, managing user authentication to ensure secure access to accounts.
@@ -55,7 +55,7 @@ The Role Based Access Control / Feature Based Access Control API is critical for
 
 [float]
 .API Endpoints for Event Management System
-[cols="1,1,2", options="header"]
+[cols="2,1,2", options="header"]
 |===
 | Endpoint | Method | Description
 | /events | POST | Allows admins to create an event with details and content.
@@ -71,7 +71,7 @@ The Event Management System API gives administrators the ability to manage, crea
 
 [float]
 .API Endpoints for Sign-Ups System
-[cols="1,1,2", options="header"]
+[cols="2,1,2", options="header"]
 |===
 | Endpoint | Method | Description
 | /signups/list | GET | Allows users to see a list of all signups available on events.
