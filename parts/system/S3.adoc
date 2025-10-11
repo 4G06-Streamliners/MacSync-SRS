@@ -41,13 +41,13 @@ The Payment System API leverages external payment gateways to manage all financi
 [float]
 .API Endpoints for Access Controls
 [cols="1,1,2", options="header"]
-| ================================== | ====== | ================================================================================================= |
-| Endpoint                           | Method | Description                                                                                       |
-| /auth/login                        | POST   | Authenticates user credentials, managing user authentication to ensure secure access to accounts. |
-| /auth/logout                       | POST   | Ends user session and clears sensitive session data.                                              |
-| /roles/permissions/{userId}        | GET    | Retrieves access rights granted to a specific user.                                               |
-| /roles/permissions/{userId}/update | PUT    | Updates a user's role and feature based access.                                                   |
-| ================================== | ====== | ================================================================================================= |
+| =========================== | ====== | ================================================================================================= |
+| Endpoint                    | Method | Description                                                                                       |
+| /auth/login                 | POST   | Authenticates user credentials, managing user authentication to ensure secure access to accounts. |
+| /auth/logout                | POST   | Ends user session and clears sensitive session data.                                              |
+| /roles/permissions/{userId} | GET    | Retrieves access rights granted to a specific user.                                               |
+| /roles/permissions/{userId} | PUT    | Updates a user's role and feature based access.                                                   |
+| =========================== | ====== | ================================================================================================= |
 
 The Role Based Access Control / Feature Based Access Control API is critical for determining the type of access rights for each user type, governing authorization across the platform so that users can only access features they are permitted to as well as allowing admins to assign access.
 
@@ -56,12 +56,14 @@ The Role Based Access Control / Feature Based Access Control API is critical for
 [float]
 .API Endpoints for Event Management System
 [cols="1,1,2", options="header"]
-| ================================ | ====== | ========================================================== |
-| Endpoint                         | Method | Description                                                |
-| /events                          | POST   | Allows admins to create an event with details and content. |
-| /events/list                     | GET    | Retrieves a list of all events created by an admin.        |
-| /events/{eventId}/update-content | PUT    | Allows admin to update existing event details and content. |
-| ================================ | ====== | ========================================================== |
+| ================= | ====== | ================================================================== |
+| Endpoint          | Method | Description                                                        |
+| /events           | POST   | Allows admins to create an event with details and content.         |
+| /events           | GET    | Retrieves a list of all events created by an admin.                |
+| /events/{eventId} | GET    | Allows admin to retrieve all content details for a specific event. |
+| /events/{eventId} | PUT    | Allows admin to update existing event details and content.         |
+| /events/{eventId} | DELETE | Allows admin to delete existing event details and content.         |
+| ================= | ====== | ================================================================== |
 
 The Event Management System API gives administrators the ability to manage, create and update events so that they are able to have their events available for users to see and also ensure content remains relevant and up to date.
 
