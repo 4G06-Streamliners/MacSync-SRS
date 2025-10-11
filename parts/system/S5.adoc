@@ -5,4 +5,20 @@ ifdef::env-draft[]
 TIP: _Classification of the behaviors, interfaces and scenarios (<<s2>>, <<s3>> and <<s4>>) by their degree of criticality. It is useful in particular if during the course of the project various pressures force the team to drop certain functions._  <<BM22>>
 endif::[]
 
-{emptysec}
+[cols="2,2,1,2"]
+|===
+|Requirement ID | Requirement Name | Priority Level | Reasoning
+
+|<<F101>> |
+Event browsing and registration |
+High (Must have) |
+Core functionality — users must be able to view events and register to participate.
+
+|<<F101>> |
+Event browsing and registration |
+High (Must have) |
+Core functionality — users must be able to view events and register to participate.
+
+|Cell in column 1, row 4
+|Cell in column 2, row 4
+|===
