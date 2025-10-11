@@ -54,7 +54,7 @@ Improves UX clarity, desirable but not mission-critical.
 |Requirement ID | Requirement Name | Priority Level | Reasoning
 
 |<<F105>> |
-Stripe integration |
+Payment gateway integration |
 High (Must have) |
 Necessary to handle secure credit/debit payments.
 
@@ -120,4 +120,42 @@ Consistency |
 High (Must have) |
 Prevents data mismatches across connected modules (tickets, buses, tables).
 |===
+
+==== (S.5.4) Priority Table for Role / Feature-Based Access Control (RBAC/FBAC)
+
+[cols="2,2,1,2"]
+|===
+|Requirement ID | Requirement Name | Priority Level | Reasoning
+
+|<<F111>> |
+Role definition |
+High (Must have) |
+Foundational for user seperation and roles.
+
+|<<F112>> |
+Feature access restriction |
+High (Must have) |
+Required to enforce permissions and data isolation.
+
+|<<F113>> |
+Privilege modification |
+Medium (Should have) |
+Improves administrative flexibility, can come after MVP.
+
+|<<NF110>> |
+Security |
+High (Must have) |
+Enforces least-privilege access model, critical for compliance.
+
+|<<NF111>> |
+Maintainability |
+Medium (Should have) |
+Simplifies updates, but not immediately essential for release.
+
+|<<NF112>> |
+Traceability |
+Medium (Should have) |
+Adds audit transparency which can help with transparency. 
+|===
+
 
