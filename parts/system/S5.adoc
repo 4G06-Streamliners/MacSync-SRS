@@ -83,3 +83,41 @@ Auditability |
 Medium (Should have) |
 Important for financial transparency, but can be implemented after MVP.
 |===
+
+==== (S.5.3) Priority Table for Bus / RSVP / Table Sign-ups Module
+
+[cols="2,2,1,2"]
+|===
+|Requirement ID | Requirement Name | Priority Level | Reasoning
+
+|<<F108>> |
+Capacity management |
+High (Must have) |
+Core logic preventing overbooking.
+
+|<<F109>> |
+First-come-first-serve allocation |
+High (Must have) |
+Necessary for fair sign-up behavior and user satisfaction.
+
+|<<F110>> |
+Reservation editing |
+Medium (Should have) |
+Improves flexibility and user experience, but can come after MVP.
+
+|<<NF107>> |
+Fairness |
+High (Must have) |
+Ensures fair seat assignment under many sign ups at the same time.
+
+|<<NF108>> |
+Performance |
+High (Must have) |
+Real-time sign-ups must complete quickly for usability.
+
+|<<NF109>> |
+Consistency |
+High (Must have) |
+Prevents data mismatches across connected modules (tickets, buses, tables).
+|===
+
