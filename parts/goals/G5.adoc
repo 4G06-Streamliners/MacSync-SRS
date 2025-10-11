@@ -5,9 +5,111 @@ ifdef::env-draft[]
 TIP: _Fundamental usage paths through the system. It presents the main scenarios (use cases) that the system should cover. The scenarios chosen for appearing here, in the Goals book, should only be the **main usage patterns**, without details such as special and erroneous cases; they should be stated in user terms only, independently of the system's structure. Detailed usage scenarios, taking into account system details and special cases, will appear in the System book (<<s4>>)._  <<BM22>>
 endif::[]
 
-.High Level use cases diagram
-image::models/use_case.svg[scale=70%,align="center"]
+**Principle Use Cases:**
+1. User Registration and Profile Setup
+2. Browse and Select Event
+3. Purchase Ticket
+4. Register for Bus/Table
+5. Organizer Event Management
+6. Check-In and Attendance Tracking
+7. Notifications and Reminders
+8. Calendar Integration
+9. Admin Oversight and Reporting
+10. Submit Waiver & Preferences (dietary, accessibility)
 
+
+**Coarse Grained Scenarios**
+---
+
+**UC1: User Registration and Profile Setup**
+1. A student accesses the LEMS web or mobile platform.  
+2. The student signs up using their McMaster credentials or a verified email.  
+3. The system prompts for profile information, including dietary restrictions, accessibility needs, and emergency contacts.  
+4. The user accepts event policies and privacy terms.  
+5. The system stores the user profile and displays a personalized dashboard.
+
+---
+
+**UC2: Browse and Select Event**
+1. The student logs in and navigates to “Upcoming Events.”  
+2. The system displays available MES events such as Fireball Formal, Grad Dinner, and Pub Nights.  
+3. The student filters or searches by event type, date, or price.  
+4. The student selects a specific event to view details, including date, venue, ticket types, and transportation options.  
+5. The student chooses to register or purchase tickets for the event.
+
+---
+
+**UC3: Purchase Tickets**
+1. The student opens the app or web platform.  
+2. The student selects the desired event from the list.  
+3. The system displays ticket types (e.g., general admission, dinner ticket, VIP).  
+4. The student selects a ticket and provides payment details using a supported provider (Stripe, Square, or PayPal).  
+5. The system processes payment securely and confirms the transaction.  
+6. The student receives a digital ticket confirmation via email and within their profile, containing a unique QR code for check-in.
+
+---
+
+**UC4: Register for Bus/Table**
+1. The student navigates to the transportation or seating section of their registered event.  
+2. The system displays available bus routes and/or tables, along with real-time availability.  
+3. The student selects their preferred bus route or table seat.  
+4. The system validates availability and confirms the assignment.  
+5. The student receives an in-app and email confirmation with assigned bus and/or table details.  
+
+---
+
+**UC5: Organizer Event Management**
+1. An organizer logs in using their role-based access credentials.  
+2. The organizer navigates to the “Event Dashboard.”  
+3. The dashboard displays analytics such as ticket sales, payment summaries, and waitlist numbers.  
+4. The organizer can update event information, adjust capacities, or open/close registration.  
+5. Organizers review dietary and accessibility data to prepare accommodations.  
+6. All updates are reflected for attendees in real time.
+
+---
+
+**UC6: Check-In and Attendance Tracking**
+1. On event day, organizers access the “Check-In” interface via a tablet or mobile device.  
+2. Attendees present their QR ticket for scanning.  
+3. The system verifies the ticket, confirms entry, and marks the attendee as checked in.  
+4. If the device is offline, check-ins are cached and synchronized later.  
+5. Organizers can view attendance counts and identify no-shows in real time.
+
+---
+
+**UC7: Notifications and Reminders**
+1. As event dates approach, the system automatically sends reminders to registered users.  
+2. Notifications include event time, location, and special instructions.  
+3. Organizers can send manual announcements (e.g., weather or venue changes).  
+4. Users may customize notification preferences in their profiles.  
+
+---
+
+**UC8: Calendar Integration**
+1. After ticket confirmation, the student adds the event to their preferred calendar (Google, Apple, or Outlook).  
+2. The system generates a `.ics` file containing event details and reminders.  
+3. Any organizer-initiated updates automatically sync to user calendars via notifications.
+
+---
+
+**UC9: Admin Oversight and Reporting**
+1. An administrator logs in with elevated permissions.  
+2. The admin reviews system-wide metrics, including payment logs, event statistics, and error reports.  
+3. The admin exports reports for financial or attendance auditing.  
+4. The admin manages user roles, system settings, and compliance with McMaster’s data policies.  
+5. Post-event, the admin archives event data and closes active sessions.
+
+---
+
+**UC10: Submit Waivers and Preferences**
+1. After ticket purchase, the student is prompted to complete event-specific forms such as waivers, dietary restrictions, and accessibility preferences.  
+2. The system displays digital waiver forms that can be signed electronically.  
+3. The student enters any dietary preferences (e.g., vegetarian, nut-free) and accessibility needs (e.g., mobility assistance, interpreter request).  
+4. The system validates required fields and confirms submission.  
+5. The preferences and waiver are stored securely and linked to the student’s event registration record.  
+6. Organizers can later view and export this data to support event preparation and accommodation planning.
+
+---
 {emptysec}
 
 
