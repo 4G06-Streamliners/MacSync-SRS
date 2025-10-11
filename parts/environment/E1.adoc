@@ -5,6 +5,8 @@ ifdef::env-draft[]
 TIP: _Clear and precise definitions of all the vocabulary specific to the application domain, including technical terms, words from ordinary language used in a special meaning, and acronyms. It introduces the terminology of the project; not just of the environment in the strict sense, but of all its parts._  <<BM22>>
 endif::[]
 
+==== (E.1.1) Vocabulary
+
 *MacSync*::  
 The name of the software application being developed. MacSync is a centralized event management platform designed for the McMaster Engineering Society (MES) to handle registrations, ticketing, payments, notifications, and event logistics.
 
@@ -46,3 +48,8 @@ A permissions model that restricts what each user (e.g., attendee, organizer, ex
 
 *Payment Integration*::  
 The system’s connection to secure third-party services
+
+==== (E.1.2) Domain Model
+
+.Domain Model for {project-title}
+image::models/domain_model.svg[scale=70%,align="center"]

@@ -1,0 +1,109 @@
+@startuml
+!include ../_style/puml.style
+
+class User {
+  + id: UUID
+  + email: EmailAddress
+  + displayName: String
+}
+
+class Credentials {
+  + login: String
+  - <<encrypted>> password: String
+}
+Credentials <--* User
+
+
+class Permission {
+  + key: PERMISSION_KEY
+}
+enum PERMISSION_KEY {
+  PAYMENTS_VIEW
+  PAYMENTS_MANAGE
+  SIGNUPS_VIEW
+  SIGNUPS_MANAGE
+  ACCESSCONTROL_MANAGE
+}
+PERMISSION_KEY <-* Permission
+User "1" <-- "*" Permission
+
+
+class Event {
+  + id: UUID
+  + name: String
+  + startAt: DateTime
+  + endAt: DateTime
+  + capacity: Integer
+  + eventExec: UserUUID
+}
+
+class Registration {
+  + id: UUID
+  + submittedAt: DateTime
+  + status: RegistrationStatus
+}
+enum RegistrationStatus {
+  PENDING
+  APPROVED
+  CANCELLED
+}
+Registration *-> RegistrationStatus
+
+User "1" -> "*" Registration 
+Event "1" <-- "*" Registration 
+
+class PaymentGateway {
+    + id: UUID
+    + amountCents: Integer
+    + provider: PaymentProvider
+    + type: PaymentType
+}
+enum PaymentProvider {
+    EXTERNAL_GATEWAY
+    INTERNAL_SYSTEM
+}
+enum PaymentType {
+    CREDIT_CARD
+    DEBIT_CARD
+    E_TRANSFER
+}
+PaymentGateway *-> PaymentProvider
+PaymentType <-* PaymentGateway
+
+Registration "1" --> "1" PaymentGateway 
+
+
+class Ticket {
+    + id: UUID
+    + code: String
+    + status: TicketStatus
+}
+enum TicketStatus {
+    AVAILABLE
+    SOLD
+    CANCELLED
+    CHECKED_IN
+}
+Ticket *-> TicketStatus
+
+Registration "1" -> "*" Ticket 
+
+abstract class Signup {
+    + id: UUID
+    + createdAt: DateTime
+    + status: SignupStatus
+}
+enum SignupStatus {
+    CONFIRMED
+    WAITLISTED
+    CANCELLED
+}
+Signup *-> SignupStatus
+
+class BusSignup extends Signup
+class RSVPSignup extends Signup
+class TableSignup extends Signup
+
+User "1" --> "*" Signup 
+Event "1" <- "*" Signup
+@enduml
