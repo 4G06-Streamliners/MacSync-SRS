@@ -1,35 +1,12 @@
-== Revision History
+== Control Information
 
-[cols="^1,^2,^2"]
+[cols="^1,^2,^2,^2,^2"]
 |===
-| Date | Developer(s) | Change
+.2+| *Version* 2+| *Delivery* 2+| *Feedback*
+| _Deadline_ | _Delivered_ | _Received_ | _Integrated_ 
 
-| 2025-09-27 | Mahad | add G.4 Functionality Overview
-| 2025-09-28 | Mahad | E.6 Invariants 
-| 2025-10-02 | Farhan | Completed E.1 
-| 2025-10-02 | Abyan | Completed G.1
-| 2025-10-02 | Abyan | Completed E.3
-| 2025-10-02 | Farhan | Completed section E.5
-| 2025-10-02 | Farhan | Completed G.3
-| 2025-09-28 | Mahad | E.6 Invariants 
-| 2025-10-02 | Prerna |  Draft G.5 High Level Usage Scenarios
-| 2025-10-02 | Abyan | Completed G.6 - Limitations and Exclusions
-| 2025-xx-xx |  |  
-| 2025-09-28 | Mahad | E.6 Invariants 
-| 2025-10-01 | Prerna | Completed S.1 Components
-| 2025-10-02 | Prerna | Completed E.2 Components
-| 2025-10-10 | Abyan | Completed S.6
-| 2025-10-08 | Abyan | Completed P.6
-| 2025-10-08 | Abyan | Completed S.2
-| 2025-10-07 | Prerna | Completed P.4 Tasks and Deliverables
-| 2025-10-08 | Prerna | Initial version of S.6 Verification and Acceptance Criteria
-| 2025-10-09 | Mahad | E.1.2 Completed Domain Model
-| 2025-10-10 | Farhan | Completed S.4 Interactions
-| 2025-10-10 | Farhan | Completed P.2 Imposed technical choices
-| 2025-10-10 | Farhan | Completed P.7.2 - Threats and mitigation
-| 2025-10-10 | Mahad | Completed S.5 - Prioritization
-| 2025-10-10 | Mahad | Completed P.3 - Schedule and milestones
-| 2025-10-10 | Mahad | Completed P.7 Requirements process and report
+| **V1** | 2025-10-10 | 2025-10-10 |  |  
+|  |  |  |  | 
 |===
 
 ifdef::author_1[]
