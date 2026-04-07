@@ -4,13 +4,8 @@
 ifdef::env-draft[]
 TIP: _List of tasks to be carried out and their scheduling. It defines the project's key dates._  <<BM22>>
 endif::[]
-
-
-=== (P.3) Schedule and milestones
-
-
-TIP: _List of tasks to be carried out and their scheduling. It defines the project's key dates._  <<BM22>>
-
+// TA feedback: Removed duplicated template header text (duplicate section title and
+// stray TIP block) that would otherwise appear in the compiled PDF.
 
 ==== P.3.1 Sprint Plan
 

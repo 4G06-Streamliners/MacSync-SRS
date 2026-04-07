@@ -4,4 +4,6 @@ Mahad Ahmed <ahmem73@mcmaster.ca>; Abyan Jaigirdar <jaigia1@mcmaster.ca>; Prerna
 :course-term: Fall
 :revnumber: 1
 :milestone: 2
-:env-draft: // Comment this variable to disable draft mode
+// TA feedback: Removed all template hint headers by disabling draft mode (env-draft),
+// so instructional NOTE/TIP text no longer appears in any SRS section.
+// :env-draft: // Comment this variable to disable draft mode

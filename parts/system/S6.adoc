@@ -12,12 +12,14 @@ To validate the functional requirements of the MacSync system, the team will per
 
 ==== Fit Criteria for Non-Functional Requirements
 
-* **Performance:** Core actions such as registration or payment confirmation shall respond within *2 seconds* under normal load.  
-* **Scalability:** The backend shall handle *500 concurrent users* without more than *10 percent* performance degradation.  
-* **Reliability:** Overall system uptime shall be *99 percent* during major event periods.  
-* **Security:** All user and payment data shall be encrypted with TLS 1.3 and stored following PCI-DSS and PIPEDA compliance.  
-* **Usability:** The registration process shall require *no more than three steps* and yield a *90 percent task-success rate* in UAT.  
-* **Notification timeliness:** Confirmation emails and in-app messages shall be delivered within *60 seconds* of completed registration.
+// TA feedback: Clarified NFR fit criteria and added concise rationales to link
+// quantitative thresholds to user expectations and institutional constraints.
+* **Performance:** Core actions such as registration or payment confirmation shall respond within *2 seconds* under normal load so that users do not abandon sessions during busy sign-up windows.  
+* **Scalability:** The backend shall handle *500 concurrent users* without more than *10 percent* performance degradation, reflecting expected peak loads for large MES events.  
+* **Reliability:** Overall system uptime shall be *99 percent* during major event periods to ensure organizers can rely on MacSync on event days.  
+* **Security:** All user and payment data shall be encrypted with TLS 1.3 and stored following PCI-DSS and PIPEDA compliance, satisfying university and legal data protection requirements.  
+* **Usability:** The registration process shall require *no more than three steps* and yield a *90 percent task-success rate* in UAT, ensuring flows are simple enough for new users to complete without training.  
+* **Notification timeliness:** Confirmation emails and in-app messages shall be delivered within *60 seconds* of completed registration, so that attendees receive immediate feedback and proof of purchase.
 
 ==== Selected Scenario for Testing
 
@@ -50,7 +52,28 @@ The scenario *Register for an Event* (<<s4>>) is selected as the primary validat
 - Procedure: Check email logs and in-app notification queue post-registration.  
 - Expected Outcome: Notifications delivered within 60 seconds.
 
-==== Traceability Matrix
+// TA feedback: Added explicit requirement traceability tables to make
+// dependencies between functional and non-functional requirements visible,
+// and to improve requirement traceability beyond test coverage.
+==== Requirement Traceability and Dependencies
+
+[cols="2,3,3,2", options="header"]
+|===
+| *Requirement ID* | *Related Goal(s)* | *Dependent / Constraining Requirement(s)* | *Notes*
+
+| <<F101,**F101**>> | <<g5,High-level usage scenarios>> (UC2, UC3) | <<NF101,**NF101**>>, <<NF103,**NF103**>> | Registration flow must meet performance and usability constraints.
+| <<F102,**F102**>> | <<g5,High-level usage scenarios>> (UC3, UC10) | <<NF102,**NF102**>>, <<NF104,**NF104**>> | Ticket generation and invoicing depend on data integrity and secure payment handling.
+| <<F103,**F103**>> | <<g5,High-level usage scenarios>> (UC2, UC4, UC7) | <<NF107,**NF107**>>, <<NF109,**NF109**>> | Waitlist behavior must remain fair and keep data consistent across modules.
+| <<F105,**F105**>> | <<g5,High-level usage scenarios>> (UC3) | <<NF104,**NF104**>>, <<NF105,**NF105**>> | Payment integration is constrained by security compliance and uptime targets.
+| <<F108,**F108**>> | <<g5,High-level usage scenarios>> (UC4) | <<NF108,**NF108**>>, <<NF109,**NF109**>> | Capacity management must satisfy response time and propagation constraints.
+| <<F111,**F111**>> | <<g5,High-level usage scenarios>> (UC5, UC9) | <<NF110,**NF110**>>, <<NF111,**NF111**>> | Role definitions are governed by least-privilege and maintainability requirements.
+| <<F114,**F114**>> | <<g1>>, <<g2>> | <<NF113,**NF113**>>, <<NF114,**NF114**>> | Encryption behavior is driven by confidentiality and integrity needs.
+| <<F115,**F115**>> | <<g5,High-level usage scenarios>> (UC6, UC9) | <<NF110,**NF110**>>, <<NF115,**NF115**>> | Authentication depends on security and availability constraints.
+|===
+
+// TA feedback: Kept and retitled the existing test-to-requirement matrix
+// as a verification traceability view, complementing the new dependency table.
+==== Verification Traceability Matrix
 
 [cols="3,3,4,2", options="header"]
 |===

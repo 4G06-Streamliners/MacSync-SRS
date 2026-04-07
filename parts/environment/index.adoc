@@ -1,6 +1,8 @@
 == (E) Environment
 
-NOTE: _The Environment book describes the application domain and external context, physical or virtual (or a mix), in which the system will operate._ <<BM22>>
+// TA feedback: Removed remaining template-style header note so that no
+// instructional/header guidance text appears in the compiled document.
+// NOTE: _The Environment book describes the application domain and external context, physical or virtual (or a mix), in which the system will operate._ <<BM22>>
 
 include::control.adoc[]
 

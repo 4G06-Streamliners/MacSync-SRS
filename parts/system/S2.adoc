@@ -12,9 +12,11 @@
 
 ===== Non-Functional Requirements
 
-. [[NF101]] **Performance:** The registration and ticketing operations shall complete within 2 seconds under normal load. (NF101)
-. [[NF102]] **Data integrity:** The system shall prevent overselling tickets by using atomic database transactions. (NF102)
-. [[NF103]] **Usability:** The registration interface shall provide clear feedback messages for successful and failed transactions. (NF103)
+// TA feedback: Clarified non-functional requirements with measurable metrics
+// and short rationales to reduce confusion between NFRs, fit criteria, and rationale.
+. [[NF101]] **Performance:** The registration and ticketing operations shall complete within *2 seconds* under normal load, so that students do not abandon the flow during busy MES events. (NF101)
+. [[NF102]] **Data integrity:** The system shall prevent overselling tickets by using atomic database transactions, ensuring that capacity counts remain correct even under concurrent registrations. (NF102)
+. [[NF103]] **Usability:** The registration interface shall provide clear success, error, and retry messages for all registration and payment outcomes to minimize user confusion and support UAT success. (NF103)
 
 ==== (S.2.2) Payment Processing Module
 
@@ -26,9 +28,11 @@
 
 ===== Non-Functional Requirements
 
-. [[NF104]] **Security compliance:** All payment data shall comply with PCI-DSS and be encrypted with TLS 1.3 during transmission. (NF104)
-. [[NF105]] **Reliability:** Payment services shall maintain 99 percent uptime during registration periods. (NF105)
-. [[NF106]] **Auditability:** All payment events shall be logged with timestamps and user identifiers for reconciliation. (NF106)
+// TA feedback: Added rationale for payment-related NFR thresholds and clarified
+// how they can be verified through monitoring and logs.
+. [[NF104]] **Security compliance:** All payment data shall comply with PCI-DSS and be encrypted with TLS 1.3 during transmission, so that MES meets institutional and legal security expectations. (NF104)
+. [[NF105]] **Reliability:** Payment services shall maintain *99 percent uptime* during registration periods, as measured by monitoring dashboards, to avoid blocking ticket purchases during peak demand. (NF105)
+. [[NF106]] **Auditability:** All payment events shall be logged with timestamps and user identifiers so that finance teams can reconcile disputes and audit transactions. (NF106)
 
 ==== (S.2.3) Bus / RSVP / Table Sign-ups Module
 
@@ -40,9 +44,11 @@
 
 ===== Non-Functional Requirements
 
-. [[NF107]] **Fairness:** The system shall guarantee equitable allocation by locking contested seats during concurrent requests. (NF107)
-. [[NF108]] **Performance:** Reservation confirmations shall occur within 1 second of submission. (NF108)
-. [[NF109]] **Consistency:** All updates shall propagate across related tables in under 3 seconds. (NF109)
+// TA feedback: Made NFRs explicitly measurable and added brief justifications
+// to distinguish them from design details while keeping them verifiable.
+. [[NF107]] **Fairness:** The system shall guarantee equitable allocation by locking contested seats during concurrent requests so that no user can bypass capacity rules. (NF107)
+. [[NF108]] **Performance:** Reservation confirmations shall occur within *1 second* of submission in 95 percent of cases during normal load to keep sign-ups feeling real time. (NF108)
+. [[NF109]] **Consistency:** All capacity and assignment updates shall propagate across related tables in under *3 seconds*, ensuring dashboards and sign-up views stay aligned. (NF109)
 
 ==== (S.2.4) Role / Feature-Based Access Control (RBAC/FBAC)
 
@@ -54,9 +60,11 @@
 
 ===== Non-Functional Requirements
 
-. [[NF110]] **Security:** Access control logic shall follow the principle of least privilege. (NF110)
-. [[NF111]] **Maintainability:** Role definitions shall be stored in configuration files editable without code changes. (NF111)
-. [[NF112]] **Traceability:** All privilege changes shall be logged for audit review. (NF112)
+// TA feedback: Expanded RBAC/FBAC NFRs to include verifiable criteria and
+// rationale for their importance to stakeholders and auditors.
+. [[NF110]] **Security:** Access control logic shall follow the principle of least privilege, demonstrated by role definitions that expose only the minimum endpoints each role requires. (NF110)
+. [[NF111]] **Maintainability:** Role definitions shall be stored in configuration or database tables that can be updated without redeploying code, reducing downtime for policy changes. (NF111)
+. [[NF112]] **Traceability:** All privilege changes shall be logged with actor, timestamp, and before/after state to support audit review and incident investigations. (NF112)
 
 ==== (S.2.5) Privacy, Data Integrity, and Security Controls
 
@@ -68,6 +76,6 @@
 
 ===== Non-Functional Requirements
 
-. [[NF113]] **Confidentiality:** Only authorized services shall access sensitive data fields. (NF113)
-. [[NF114]] **Integrity:** Data modification operations shall use hashing or checksums to detect tampering. (NF114)
-. [[NF115]] **Availability:** Security and privacy services shall maintain 99 percent uptime and recover automatically after failure. (NF115)
+. [[NF113]] **Confidentiality:** Only authorized services shall access sensitive data fields, verified through access-control tests and log review. (NF113)
+. [[NF114]] **Integrity:** Data modification operations shall use hashing or checksums to detect tampering, so that unauthorized changes can be identified during audits. (NF114)
+. [[NF115]] **Availability:** Security and privacy services shall maintain *99 percent uptime* and support automatic recovery within *5 minutes* of a failure, ensuring that authentication and protection mechanisms are consistently available. (NF115)
