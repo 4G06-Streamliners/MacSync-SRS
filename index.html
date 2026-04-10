@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <meta name="author" content="Mahad Ahmed, Abyan Jaigirdar, Prerna Prabhu, Farhan Rahman, Ali Zia">
 <title>MacSync: MacSync</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -117,7 +117,6 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 :not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
 pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
-pre>code{display:block}
 pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
 em em{font-style:normal}
 strong strong{font-weight:400}
@@ -220,6 +219,7 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
 .literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
 .listingblock>.content{position:relative}
+.listingblock pre>code{display:block}
 .listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
 .listingblock:hover code[data-lang]::before{display:block}
 .listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
@@ -451,7 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author5" class="author">Ali Zia</span><br>
 <span id="email5" class="email"><a href="mailto:ziam8@mcmaster.ca">ziam8@mcmaster.ca</a></span><br>
 <span id="revnumber">version 1,</span>
-<span id="revdate">2025-10-25</span>
+<span id="revdate">2026-04-10</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -542,7 +542,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_validation_of_functional_requirements">Validation of Functional Requirements</a></li>
 <li><a href="#_fit_criteria_for_non_functional_requirements">Fit Criteria for Non-Functional Requirements</a></li>
 <li><a href="#_selected_scenario_for_testing">Selected Scenario for Testing</a></li>
-<li><a href="#_traceability_matrix">Traceability Matrix</a></li>
+<li><a href="#_requirement_traceability_and_dependencies">Requirement Traceability and Dependencies</a></li>
+<li><a href="#_verification_traceability_matrix">Verification Traceability Matrix</a></li>
 </ul>
 </li>
 </ul>
@@ -551,8 +552,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#p1">(P.1) Roles and personnel</a></li>
 <li><a href="#p2">(P.2) Imposed technical choices</a></li>
-<li><a href="#p3">(P.3) Schedule and milestones</a></li>
-<li><a href="#_p_3_schedule_and_milestones">(P.3) Schedule and milestones</a>
+<li><a href="#p3">(P.3) Schedule and milestones</a>
 <ul class="sectlevel3">
 <li><a href="#_p_3_1_sprint_plan">P.3.1 Sprint Plan</a></li>
 </ul>
@@ -673,30 +673,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_g_goals"><a class="link" href="#_g_goals">(G) Goals</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<em>Goals are "needs of the target organization, which the system will address". While the development team is the principal user of the other books, the Goals book addresses a wider audience: essentially, all stakeholders</em> <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>It must contain enough information to provide — if read just by itself — a general sketch of the entire project. To this effect, chapter <a href="#g3">G.3</a> presents a short overview of the system and <a href="#g1">G.1</a> will typically include some key properties of the environment. As it addresses a wide readership, it should be clear and minimize the use of specialized technical terms. Together, <a href="#g1">G.1</a>, <a href="#g2">G.2</a> and <a href="#g3">G.3</a> describe the rationale for the project. It is important to state these justifications explicitly. Typically, they are well understood at the start of the project, but management and priorities can change</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <h3 id="_control_information_2" class="discrete">Control Information</h3>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. MacSync&#8201;&#8212;&#8201;Versionning Information&#8201;&#8212;&#8201;Goal Book</caption>
@@ -813,18 +789,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="g2"><a class="link" href="#g2">(G.2) Current situation</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Current state of processes to be addressed by the project and the resulting system. It describes the current situation, upon which the system is expected to improve</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The McMaster Engineering Society (MES) organizes many large student events on the McMaster University campus intended to attract hundreds of attendees. The current state of processes involved in running these events, from registration and ticketing to event updates are oftentimes scattered across multiple third-party platforms and tools such as Discord servers, Instagram stories and Google Forms. Due to this scattered approach, several barriers and inefficiencies are created for both students intending to participate in events organized by the MES and organizers dedicating their time to event logistics. From the perspective of attendees, there is frustration and a struggle to stay up to date and access clear information regarding event logistics. The scattered nature of information sources results in confusion, as attendees are forced to navigate multiple social media platforms or forms to stay up to date on events and complete a single registration. The result can be missed deadlines or uncertainty around event arrangements from seating to transportation arrangements. Additionally, the absence of centralized notifications further diminishes the experience, as the possibility of missing critical updates or reminders increases which can impact the event attendance of users. From the organizers perspective, there is a significant load in administrative work. Managing ticketing and signups across multiple platforms is time-consuming and with the added work of tracking accessibility requests and waivers can further increase the likelihood of omissions or errors in tracking. Overall, the current uncentralized process increases administrative overhead work for organizers reducing their efficiency and reduces the quality of experience for attendees, negatively impacting their experiences.</p>
 </div>
@@ -872,18 +836,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="g4"><a class="link" href="#g4">(G.4) Functionality overview</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Overview of the functions (behavior) of the system. Principal properties only (details are in the System book). It is a short overview of the functions of the future system, a kind of capsule version of book S, skipping details but enabling readers to get a quick grasp of what the system will do.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The MacSync Application provides a centralized platform for McMaster Engineering Society (MES) to host large-scale events. Listed below is a high-level overview and relevancy of the functional and non-functional requirements integral to the sytem.</p>
 </div>
@@ -989,18 +941,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="g5"><a class="link" href="#g5">(G.5) High-level usage scenarios</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Fundamental usage paths through the system. It presents the main scenarios (use cases) that the system should cover. The scenarios chosen for appearing here, in the Goals book, should only be the <strong>main usage patterns</strong>, without details such as special and erroneous cases; they should be stated in user terms only, independently of the system&#8217;s structure. Detailed usage scenarios, taking into account system details and special cases, will appear in the System book (<a href="#s4">S.4</a>).</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p><strong>Principle Use Cases:</strong>
 1. User Registration and Profile Setup
@@ -1145,18 +1085,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="g7"><a class="link" href="#g7">(G.7) Stakeholders and requirements sources</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Groups of people who can affect the project or be affected by it, and other places to consider for information about the project and system. It lists stakeholders and other requirements sources. It should define stakeholders as categories of people, not individuals, even if such individuals are known at the time of writing. The main goal of chapter <a href="#g7">G.7</a> is to avoid forgetting any category of people whose input is relevant to the project. It also lists documents and other information that the project, aside from soliciting input from stakeholders, can consult for requirements information.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_g_7_1_stakeholder_table"><a class="link" href="#_g_7_1_stakeholder_table">G.7.1 Stakeholder Table</a></h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -1274,18 +1202,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_e_environment"><a class="link" href="#_e_environment">(E) Environment</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<em>The Environment book describes the application domain and external context, physical or virtual (or a mix), in which the system will operate.</em> <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <h3 id="_control_information_3" class="discrete">Control Information</h3>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. MacSync&#8201;&#8212;&#8201;Versionning Information&#8201;&#8212;&#8201;Environment Book</caption>
@@ -1360,18 +1276,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 <div class="sect2">
 <h3 id="e1"><a class="link" href="#e1">(E.1) Glossary</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Clear and precise definitions of all the vocabulary specific to the application domain, including technical terms, words from ordinary language used in a special meaning, and acronyms. It introduces the terminology of the project; not just of the environment in the strict sense, but of all its parts.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_e_1_1_vocabulary"><a class="link" href="#_e_1_1_vocabulary">(E.1.1) Vocabulary</a></h4>
 <div class="dlist">
@@ -1447,18 +1351,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="sect2">
 <h3 id="e2"><a class="link" href="#e2">(E.2) Components</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>List of elements of the environment that may affect or be affected by the system and project. It includes other systems to which the system must be interfaced. These components may include existing systems, particularly software systems, with which the system will interact — by using their APIs (program interfaces), or by providing APIs to them, or both. These are interfaces provided to the system from the outside world. They are distinct from both: interfaces provided by the system to the outside world (<a href="#s3">S.3</a>); and technology elements that the system&#8217;s development will require (<a href="#p5">P.5</a>).</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The following external components represent the environment in which the Large Event Management System (LEMS) operates. These are systems and services with which LEMS must interface, or which constrain its operation:</p>
 </div>
@@ -1566,18 +1458,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 <div class="sect2">
 <h3 id="e4"><a class="link" href="#e4">(E.4) Assumptions</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Properties of the environment that may be assumed, with the goal of facilitating the project and simplifying the system. It defines properties that are not imposed by the environment (like those in <a href="#e3">E.3</a>) but assumed to hold, as an explicit decision meant to facilitate the system&#8217;s construction.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>Some assumptions made can be found below:</p>
 </div>
@@ -1597,18 +1477,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 <div class="sect2">
 <h3 id="e5"><a class="link" href="#e5">(E.5) Effects</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Elements and properties of the environment that the system will affect. It defines effects of the system&#8217;s operations on properties of the environment. Where the previous two categories (<a href="#e3">E.3</a>, <a href="#e4">E.4</a>) defined influences of the environment on the system, effects are influences in the reverse direction.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The introduction of the MacSync platform will have several direct effects on the environment in which it operates:</p>
 </div>
@@ -1643,18 +1511,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 <div class="sect2">
 <h3 id="e6"><a class="link" href="#e6">(E.6) Invariants</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Properties of the environment that the system&#8217;s operation must preserve, i.e., properties of the environment that operations of the system may assume to hold when they start, and must maintain.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>Properties of the environment that the system&#8217;s operation must preserve will be assumed as follows:</p>
 </div>
@@ -1677,18 +1533,6 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="sect1">
 <h2 id="_s_system"><a class="link" href="#_s_system">(S) System</a></h2>
 <div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<em>the System book refines the Goal one by focusing on more detailed requirements.</em>
-</td>
-</tr>
-</table>
-</div>
 <h3 id="_control_information_4" class="discrete">Control Information</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1762,18 +1606,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </table>
 <div class="sect2">
 <h3 id="s1"><a class="link" href="#s1">(S.1) Components</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Overall structure expressed by the list of major software and, if applicable, hardware parts.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The system relies on the following <strong>software components</strong>:</p>
 </div>
@@ -1859,13 +1691,13 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a id="NF101"></a> <strong>Performance:</strong> The registration and ticketing operations shall complete within 2 seconds under normal load. (NF101)</p>
+<p><a id="NF101"></a> <strong>Performance:</strong> The registration and ticketing operations shall complete within <strong>2 seconds</strong> under normal load, so that students do not abandon the flow during busy MES events. (NF101)</p>
 </li>
 <li>
-<p><a id="NF102"></a> <strong>Data integrity:</strong> The system shall prevent overselling tickets by using atomic database transactions. (NF102)</p>
+<p><a id="NF102"></a> <strong>Data integrity:</strong> The system shall prevent overselling tickets by using atomic database transactions, ensuring that capacity counts remain correct even under concurrent registrations. (NF102)</p>
 </li>
 <li>
-<p><a id="NF103"></a> <strong>Usability:</strong> The registration interface shall provide clear feedback messages for successful and failed transactions. (NF103)</p>
+<p><a id="NF103"></a> <strong>Usability:</strong> The registration interface shall provide clear success, error, and retry messages for all registration and payment outcomes to minimize user confusion and support UAT success. (NF103)</p>
 </li>
 </ol>
 </div>
@@ -1894,13 +1726,13 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a id="NF104"></a> <strong>Security compliance:</strong> All payment data shall comply with PCI-DSS and be encrypted with TLS 1.3 during transmission. (NF104)</p>
+<p><a id="NF104"></a> <strong>Security compliance:</strong> All payment data shall comply with PCI-DSS and be encrypted with TLS 1.3 during transmission, so that MES meets institutional and legal security expectations. (NF104)</p>
 </li>
 <li>
-<p><a id="NF105"></a> <strong>Reliability:</strong> Payment services shall maintain 99 percent uptime during registration periods. (NF105)</p>
+<p><a id="NF105"></a> <strong>Reliability:</strong> Payment services shall maintain <strong>99 percent uptime</strong> during registration periods, as measured by monitoring dashboards, to avoid blocking ticket purchases during peak demand. (NF105)</p>
 </li>
 <li>
-<p><a id="NF106"></a> <strong>Auditability:</strong> All payment events shall be logged with timestamps and user identifiers for reconciliation. (NF106)</p>
+<p><a id="NF106"></a> <strong>Auditability:</strong> All payment events shall be logged with timestamps and user identifiers so that finance teams can reconcile disputes and audit transactions. (NF106)</p>
 </li>
 </ol>
 </div>
@@ -1929,13 +1761,13 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a id="NF107"></a> <strong>Fairness:</strong> The system shall guarantee equitable allocation by locking contested seats during concurrent requests. (NF107)</p>
+<p><a id="NF107"></a> <strong>Fairness:</strong> The system shall guarantee equitable allocation by locking contested seats during concurrent requests so that no user can bypass capacity rules. (NF107)</p>
 </li>
 <li>
-<p><a id="NF108"></a> <strong>Performance:</strong> Reservation confirmations shall occur within 1 second of submission. (NF108)</p>
+<p><a id="NF108"></a> <strong>Performance:</strong> Reservation confirmations shall occur within <strong>1 second</strong> of submission in 95 percent of cases during normal load to keep sign-ups feeling real time. (NF108)</p>
 </li>
 <li>
-<p><a id="NF109"></a> <strong>Consistency:</strong> All updates shall propagate across related tables in under 3 seconds. (NF109)</p>
+<p><a id="NF109"></a> <strong>Consistency:</strong> All capacity and assignment updates shall propagate across related tables in under <strong>3 seconds</strong>, ensuring dashboards and sign-up views stay aligned. (NF109)</p>
 </li>
 </ol>
 </div>
@@ -1964,13 +1796,13 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a id="NF110"></a> <strong>Security:</strong> Access control logic shall follow the principle of least privilege. (NF110)</p>
+<p><a id="NF110"></a> <strong>Security:</strong> Access control logic shall follow the principle of least privilege, demonstrated by role definitions that expose only the minimum endpoints each role requires. (NF110)</p>
 </li>
 <li>
-<p><a id="NF111"></a> <strong>Maintainability:</strong> Role definitions shall be stored in configuration files editable without code changes. (NF111)</p>
+<p><a id="NF111"></a> <strong>Maintainability:</strong> Role definitions shall be stored in configuration or database tables that can be updated without redeploying code, reducing downtime for policy changes. (NF111)</p>
 </li>
 <li>
-<p><a id="NF112"></a> <strong>Traceability:</strong> All privilege changes shall be logged for audit review. (NF112)</p>
+<p><a id="NF112"></a> <strong>Traceability:</strong> All privilege changes shall be logged with actor, timestamp, and before/after state to support audit review and incident investigations. (NF112)</p>
 </li>
 </ol>
 </div>
@@ -1999,13 +1831,13 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a id="NF113"></a> <strong>Confidentiality:</strong> Only authorized services shall access sensitive data fields. (NF113)</p>
+<p><a id="NF113"></a> <strong>Confidentiality:</strong> Only authorized services shall access sensitive data fields, verified through access-control tests and log review. (NF113)</p>
 </li>
 <li>
-<p><a id="NF114"></a> <strong>Integrity:</strong> Data modification operations shall use hashing or checksums to detect tampering. (NF114)</p>
+<p><a id="NF114"></a> <strong>Integrity:</strong> Data modification operations shall use hashing or checksums to detect tampering, so that unauthorized changes can be identified during audits. (NF114)</p>
 </li>
 <li>
-<p><a id="NF115"></a> <strong>Availability:</strong> Security and privacy services shall maintain 99 percent uptime and recover automatically after failure. (NF115)</p>
+<p><a id="NF115"></a> <strong>Availability:</strong> Security and privacy services shall maintain <strong>99 percent uptime</strong> and support automatic recovery within <strong>5 minutes</strong> of a failure, ensuring that authentication and protection mechanisms are consistently available. (NF115)</p>
 </li>
 </ol>
 </div>
@@ -2014,18 +1846,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 <div class="sect2">
 <h3 id="s3"><a class="link" href="#s3">(S.3) Interfaces</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>How the system makes the functionality of <a href="#s2">S.2</a> available to the rest of the world, particularly user interfaces and program interfaces (APIs). It specifies how that functionality will be made available to the rest of the world, including people (users) and other systems. These are interfaces provided by the system to the outside; the other way around, interfaces from other systems, which the system may use, are specified in <a href="#e2">E.2</a>.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The MES system offers several external interfaces, which facilitate interaction with both users and external systems. This section details the external APIs provided by each core component of the system. These APIs enable key functionalities for the platform such as user navigation, payment system interaction, access control, event management and sign-ups.</p>
 </div>
@@ -2257,18 +2077,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 <div class="sect2">
 <h3 id="s4"><a class="link" href="#s4">(S.4) Detailed usage scenarios</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Examples of interaction between the environment (or human users) and the system, expressed as user stories. Such scenarios are not by themselves a substitute for precise descriptions of functionality (<a href="#s3">S.3</a>), but provide an important complement by specifying cases that these behavior descriptions must support; they also serve as a basis for developing test cases. The scenarios most relevant for stakeholders are given in chapter <a href="#g5">G.5</a> in the Goals book, at a general level, as use cases; in contrast, <a href="#s4">S.4</a> can refer to system components and functionality (from other chapters of the System book) as well as special and erroneous cases, and introduce more specific scenarios.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_s_4_1_register_for_an_event"><a class="link" href="#_s_4_1_register_for_an_event">(S.4.1) Register for an Event</a></h4>
 <div class="ulist">
@@ -2633,18 +2441,6 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 <div class="sect2">
 <h3 id="s5"><a class="link" href="#s5">(S.5) Prioritization</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Classification of the behaviors, interfaces and scenarios (<a href="#s2">S.2</a>, <a href="#s3">S.3</a> and <a href="#s4">S.4</a>) by their degree of criticality. It is useful in particular if during the course of the project various pressures force the team to drop certain functions.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_s_5_1_priority_table_for_event_registration_and_ticketing"><a class="link" href="#_s_5_1_priority_table_for_event_registration_and_ticketing">(S.5.1) Priority Table for Event Registration and Ticketing</a></h4>
 <table class="tableblock frame-all grid-all stretch">
@@ -2972,22 +2768,22 @@ These constraints are considered non-negotiable and define the limits within whi
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Performance:</strong> Core actions such as registration or payment confirmation shall respond within <strong>2 seconds</strong> under normal load.</p>
+<p><strong>Performance:</strong> Core actions such as registration or payment confirmation shall respond within <strong>2 seconds</strong> under normal load so that users do not abandon sessions during busy sign-up windows.</p>
 </li>
 <li>
-<p><strong>Scalability:</strong> The backend shall handle <strong>500 concurrent users</strong> without more than <strong>10 percent</strong> performance degradation.</p>
+<p><strong>Scalability:</strong> The backend shall handle <strong>500 concurrent users</strong> without more than <strong>10 percent</strong> performance degradation, reflecting expected peak loads for large MES events.</p>
 </li>
 <li>
-<p><strong>Reliability:</strong> Overall system uptime shall be <strong>99 percent</strong> during major event periods.</p>
+<p><strong>Reliability:</strong> Overall system uptime shall be <strong>99 percent</strong> during major event periods to ensure organizers can rely on MacSync on event days.</p>
 </li>
 <li>
-<p><strong>Security:</strong> All user and payment data shall be encrypted with TLS 1.3 and stored following PCI-DSS and PIPEDA compliance.</p>
+<p><strong>Security:</strong> All user and payment data shall be encrypted with TLS 1.3 and stored following PCI-DSS and PIPEDA compliance, satisfying university and legal data protection requirements.</p>
 </li>
 <li>
-<p><strong>Usability:</strong> The registration process shall require <strong>no more than three steps</strong> and yield a <strong>90 percent task-success rate</strong> in UAT.</p>
+<p><strong>Usability:</strong> The registration process shall require <strong>no more than three steps</strong> and yield a <strong>90 percent task-success rate</strong> in UAT, ensuring flows are simple enough for new users to complete without training.</p>
 </li>
 <li>
-<p><strong>Notification timeliness:</strong> Confirmation emails and in-app messages shall be delivered within <strong>60 seconds</strong> of completed registration.</p>
+<p><strong>Notification timeliness:</strong> Confirmation emails and in-app messages shall be delivered within <strong>60 seconds</strong> of completed registration, so that attendees receive immediate feedback and proof of purchase.</p>
 </li>
 </ul>
 </div>
@@ -3086,7 +2882,76 @@ These constraints are considered non-negotiable and define the limits within whi
 </div>
 </div>
 <div class="sect3">
-<h4 id="_traceability_matrix"><a class="link" href="#_traceability_matrix">Traceability Matrix</a></h4>
+<h4 id="_requirement_traceability_and_dependencies"><a class="link" href="#_requirement_traceability_and_dependencies">Requirement Traceability and Dependencies</a></h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 30%;">
+<col style="width: 30%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Requirement ID</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Related Goal(s)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Dependent / Constraining Requirement(s)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F101"><strong>F101</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC2, UC3)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF101"><strong>NF101</strong></a>, <a href="#NF103"><strong>NF103</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Registration flow must meet performance and usability constraints.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F102"><strong>F102</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC3, UC10)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF102"><strong>NF102</strong></a>, <a href="#NF104"><strong>NF104</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ticket generation and invoicing depend on data integrity and secure payment handling.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F103"><strong>F103</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC2, UC4, UC7)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF107"><strong>NF107</strong></a>, <a href="#NF109"><strong>NF109</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Waitlist behavior must remain fair and keep data consistent across modules.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F105"><strong>F105</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC3)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF104"><strong>NF104</strong></a>, <a href="#NF105"><strong>NF105</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Payment integration is constrained by security compliance and uptime targets.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F108"><strong>F108</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF108"><strong>NF108</strong></a>, <a href="#NF109"><strong>NF109</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Capacity management must satisfy response time and propagation constraints.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F111"><strong>F111</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC5, UC9)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF110"><strong>NF110</strong></a>, <a href="#NF111"><strong>NF111</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role definitions are governed by least-privilege and maintainability requirements.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F114"><strong>F114</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g1">G.1</a>, <a href="#g2">G.2</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF113"><strong>NF113</strong></a>, <a href="#NF114"><strong>NF114</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Encryption behavior is driven by confidentiality and integrity needs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#F115"><strong>F115</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#g5">High-level usage scenarios</a> (UC6, UC9)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#NF110"><strong>NF110</strong></a>, <a href="#NF115"><strong>NF115</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Authentication depends on security and availability constraints.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_verification_traceability_matrix"><a class="link" href="#_verification_traceability_matrix">Verification Traceability Matrix</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -3228,18 +3093,6 @@ Verification confirms that the system has been built correctly according to spec
 </table>
 <div class="sect2">
 <h3 id="p1"><a class="link" href="#p1">(P.1) Roles and personnel</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Main responsibilities in the project; required project staff and their needed qualifications. It defines the roles (as a human responsibility) involved in the project.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -3388,33 +3241,6 @@ Verification confirms that the system has been built correctly according to spec
 </div>
 <div class="sect2">
 <h3 id="p3"><a class="link" href="#p3">(P.3) Schedule and milestones</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>List of tasks to be carried out and their scheduling. It defines the project&#8217;s key dates.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_p_3_schedule_and_milestones"><a class="link" href="#_p_3_schedule_and_milestones">(P.3) Schedule and milestones</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>List of tasks to be carried out and their scheduling. It defines the project&#8217;s key dates.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_p_3_1_sprint_plan"><a class="link" href="#_p_3_1_sprint_plan">P.3.1 Sprint Plan</a></h4>
 <div class="sect4">
@@ -3577,18 +3403,6 @@ Verification confirms that the system has been built correctly according to spec
 </div>
 <div class="sect2">
 <h3 id="p4"><a class="link" href="#p4">(P.4) Tasks and deliverables</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em><strong>This is the core of the Project book</strong>. It details the individual tasks listed under <a href="#p3">P.3</a> and their expected outcomes. It define the project&#8217;s main activities and the results they must produce, associated with the milestone dates defined in <a href="#p3">P.3</a>.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p>The following table outlines the detailed tasks and deliverables for the Large Event Management System (LEMS) – Project B.
 Each task corresponds to a major system feature, deliverable, or refinement cycle defined in the MES Project Scope and Capstone Calendar.
@@ -3852,18 +3666,6 @@ Mobile phones or tablets equipped with cameras will be necessary for attendee ch
 </div>
 <div class="sect2">
 <h3 id="p6"><a class="link" href="#p6">(P.6) Risk and mitigation analysis</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Potential obstacles to meeting the schedule of <a href="#p4">P.4</a>, and measures for adapting the plan if they do arise. It is essential to be on the lookout for events that could derail the project, and devise mitigation strategies. It can include a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for the project.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_risk_analysis"><a class="link" href="#_risk_analysis">Risk Analysis</a></h4>
 <div class="ulist">
@@ -3913,18 +3715,6 @@ Mobile phones or tablets equipped with cameras will be necessary for attendee ch
 </div>
 <div class="sect2">
 <h3 id="p7"><a class="link" href="#p7">(P.7) Requirements process and report</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<em>Initially, description of what the requirements process will be; later, report on its steps. It starts out as a plan for conducting the requirements elicitation process, but is meant to be updated as part of that process so that it includes the key lessons of elicitation.</em>  <a href="#BM22">[1]</a>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_p_7_1_interviews_with_direct_stakeholders"><a class="link" href="#_p_7_1_interviews_with_direct_stakeholders">(P.7.1) Interviews with Direct Stakeholders</a></h4>
 <div class="ulist">
@@ -4012,7 +3802,7 @@ Mobile phones or tablets equipped with cameras will be necessary for attendee ch
 <div id="footer">
 <div id="footer-text">
 Version 1<br>
-Last updated 2025-10-25 15:37:42 -0400
+Last updated 2026-04-10 12:06:43 -0400
 </div>
 </div>
 </body>
